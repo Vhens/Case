@@ -42,54 +42,25 @@
 </style>
 <body>
    <div class="box" id="box">
-        <div class="item">
+<!--         <div class="item">
             <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
+        </div> -->
 
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
-        <div class="item">
-            <a href="cube.html">3D立方体</a>
-        </div>
    </div>
-    <script type="text/javascript" src="common/js/jquery.min.js"></script>
-   <script type="text/javascript">
-       $(function(){
-            alert(1)
-            $.getJSON("common/data/indexData.json",function(data){
-                 alert(11)
-                console.log(data.name)
-            })
-       });
-   </script>
+   <script type="text/javascript" src="common/data/indexData.json"></script>
    <script type="text/javascript">
        (function(){
             var box=document.querySelector('#box');
+              /*获取数据*/
+             var json=data.indexData.length;
+             var strHtml="";
+             for(var j=0;j<json;j++){
+                console.log(data.indexData[j])
+                strHtml+="<div class='item'>";
+                strHtml+="<a href='"+data.indexData[j].url+".html'>"+data.indexData[j].name+"</a>";
+                strHtml+="</div>";
+             }
+            box.innerHTML=strHtml;
             var _item=document.querySelectorAll('.item');
             var len=_item.length;
             var w=document.documentElement.clientWidth;

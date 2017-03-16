@@ -1,5 +1,9 @@
-{
+var data={
     indexData:[
+            {
+                "url":"cube",
+                "name":"3D立方体"
+            },
             {
                 "url":"cube",
                 "name":"3D立方体"
