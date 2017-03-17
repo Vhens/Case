@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字滚动</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        .container{
+            width:300px;
+            margin:150px auto;
+            white-space:nowrap;
+            overflow: hidden;
+            font-size: 16px;
+            font-family: '微软雅黑';
+            color: #666;
+        }
+        .inner{
+            width:1000px;
+            overflow:hidden;
+        }
+        .inner p{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="box">
+        <div class="inner">
+            <p class="txt">迷雾重重的梦境中，穿行了谁的影子，湮灭了谁的相思，又掩埋了，谁的今生前世？</p>
+            <p class="txt">111</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        window.onload=function(){
+            var box=document.getElementById('box'),
+                inner=document.getElementsByTagName('div')[0],
+                op=document.getElementsByTagName('p')[0],
+                p_w=op.offsetWidth,
+                boxW=op.offsetWidth;
+                if(boxW>p_w){
+                    return false;
+                }else{
+                    inner.innerHTML+=inner.innerHTML;
+                    setTimeout(roll,2000);
+                }
+
+
+        });
+            function roll(){
+                    if(p_w>box.scrollLeft){
+                        box.scrollLeft++;
+                        setTimeout(roll,30);
+                    }else{
+                        setTimeout(rolling,2000);
+                    }
+                }
+                function rolling(){
+                    box.scrollLeft=0;
+                    roll()
+                }
+    </script>
+</body>
+</html>
