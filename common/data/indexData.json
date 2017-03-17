@@ -3,13 +3,15 @@ var data={
             {
                 "url":"cube",
                 "name":"3D立方体"
-            },
-            {
+            },{
                 "url":"barrage",
                 "name":"弹幕"
             },{
                 "url":"bright",
                 "name":"白光闪过"
+            },{
+                "url":"margnifier",
+                "name":"放大镜"
             }
     ]
 }
