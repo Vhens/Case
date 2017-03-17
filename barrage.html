@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹幕</title>
+    <style type="text/css">
+        *{margin:0;padding: 0;}
+        .barrage{
+            width: 100%;
+            background-color: #708090;
+            margin:0 auto;
+            padding: 100px 0;
+            font-family: '微软雅黑'
+        }
+        .content{
+            position:relative;
+            width: 800px;
+            height:500px;
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            margin:0 auto;
+        }
+        input:nth-of-type(1){
+            width:240px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            border:1px solid #ccc;
+            border-radius: 15px;
+            margin:20px 0 0 800px;
+            padding-left: 10px;
+            outline: none;
+        }
+        input:nth-of-type(2){
+            width:50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border:1px solid #ccc;
+            border-radius: 4px;
+            margin-left: 10px;
+            outline: none;
+        }
+        input:nth-of-type(2):hover{
+           border-color: #708090;
+        }
+        p{
+            position: absolute;
+            top:0;
+            left:800px;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="barrage" id="barrage">
+        <div class="content" id="content"></div>
+        <input type="text" id="txt" placeholder="请输入弹幕...">
+        <input type="button" value="发送" id="send">
+    </div>
+    <script type="text/javascript" src="https://vhens.github.io/Case/common/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var barrage=$('#barrage');
+            var content=$('#content');
+            var send=$('#send');
+            barrage.css('height',$('body').height());
+            send.on('click',function(){
+                var txtVal=$('#txt').val();
+                var _top=Math.floor(Math.random()*(content.innerHeight()-30));
+                var _fontSize=16+Math.floor(Math.random()*10);
+                var _rgb="rgb(" + Math.floor(Math.random()*255)+"," + Math.floor(Math.random()*255)+"," + Math.floor(Math.random()*255)+")";
+                var _p=$('<p></p>');
+                _p.text(txtVal);
+                $('#txt').val('');
+                _p.css({"top":_top,"font-size":_fontSize,"color":_rgb});
+                content.append(_p);
+                var _time=Math.ceil(Math.random()*4000)+2000;
+                _p.stop().animate({"left":"-200px"},_time,function(){
+                $(this).remove();
+                });
+            })
+        })
+    </script>
+</body>
+</html>
