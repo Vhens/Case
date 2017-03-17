@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>光亮特效</title>
+    <style type="text/css">
+        .bright{
+            position: relative;
+            width: 240px;
+            height: 240px;
+            margin:100px auto;
+            background-color: #000;
+        }
+        .bright:before{
+            content: "";
+            position:absolute;
+            top: -60px;
+            left: -120px;
+            width:60px;
+            height:300px;
+            overflow: hidden;
+            background-image:-webkit-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,0.2),rgba(255,255,255,0));
+            background-image:-moz-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,0.2),rgba(255,255,255,0));
+            background:-ms-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,0.2),rgba(255,255,255,0));
+            background-image:linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,0.2),rgba(255,255,255,0));
+            -webkit-transform:skewX(-45deg);
+            -moz-transform:skewX(-45deg);
+            -ms-transform:skewX(-45deg);
+            transform:skewX(-45deg);
+        }
+        .bright:hover:before{
+            -webkit-animation:bright .5s ease-in .2s;
+            -moz-animation:bright .5s ease-in .2s;
+            -ms-animation:bright .5s ease-in .2s;
+            animation:bright .5s ease-in .2s;
+        }
+        @-webkit-keyframes bright{
+            0%{
+                left:-120px;
+            }
+            100%{
+                left: 380px;
+            }
+        }
+        @-moz-keyframes bright{
+            0%{
+                left:-120px;
+            }
+            100%{
+                left: 380px;
+            }
+        }
+        @-ms-keyframes bright{
+            0%{
+                left:-120px;
+            }
+            100%{
+                left: 380px;
+            }
+        }
+        @keyframes bright{
+            0%{
+                left:-120px;
+            }
+            100%{
+                left: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bright"></div>
+</body>
+</html>

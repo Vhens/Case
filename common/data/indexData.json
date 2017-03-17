@@ -7,6 +7,9 @@ var data={
             {
                 "url":"barrage",
                 "name":"弹幕"
+            },{
+                "url":"bright",
+                "name":"白光闪过"
             }
     ]
 }
