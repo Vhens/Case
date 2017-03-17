@@ -13,5 +13,9 @@ var data={
                 "url":"magnifier",
                 "name":"放大镜"
             }
+            ,{
+                "url":"carousel",
+                "name":"js图片切换"
+            }
     ]
 }
