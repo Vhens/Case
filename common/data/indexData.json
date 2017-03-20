@@ -12,10 +12,12 @@ var data={
             },{
                 "url":"magnifier",
                 "name":"放大镜"
-            }
-            ,{
+            },{
                 "url":"carousel",
                 "name":"js图片切换"
+            },{
+                "url":"roll",
+                "name":"(公告)文字滚动"
             }
     ]
 }
