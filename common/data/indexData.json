@@ -18,6 +18,9 @@ var data={
             },{
                 "url":"roll",
                 "name":"(公告)文字滚动"
+            },{
+                "url":"animation",
+                "name":"div动画"
             }
     ]
 }
