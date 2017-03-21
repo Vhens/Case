@@ -22,5 +22,9 @@ var data={
                 "url":"animation",
                 "name":"div动画"
             }
+            ,{
+                "url":"turn",
+                "name":"CSS3图片翻转"
+            }
     ]
 }
