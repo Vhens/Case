@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css图片翻转</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+          width: 240px;
+          margin:150px auto;
+        }
+        .filp-box{
+            display: inline-block;
+            -webkit-perspective:800;
+            -moz-perspective:800;
+            -ms-perspective:800;
+            perspective:800;
+            -webkit-transform:perspective(800);
+            transform:perspective(800);
+            transform-style:preserve-3d;
+        }
+        .flip{
+            position: relative;
+            width: 240px;
+            height: 300px;
+            transition:.6s;
+            transform-style:preserve-3d;
+        }
+        .front,.back{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility:hidden;/**隐藏被旋转的 div 元素的背面**/
+        }
+        .front{
+            transform:rotateY(0deg);
+            z-index:2;
+        }
+        .back{
+            transform:rotateY(180deg);
+        }
+        .title{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            color:#fff;
+            line-height: 30px;
+            font-size: 18px;
+            background-color: rgba(0,0,0,.6);
+        }
+        /*翻转*/
+        .flip-box:hover .flip{
+            transform:rotateY(-180deg);
+        }
+        .book{
+            position: absolute;
+            left: 45%;
+            top: 55%;
+            width:240px;
+            height: 300px;
+            transform-style:preserve-3d;
+            transform:perspective(800px) rotateX(60deg) rotateY(0deg);
+            transition:1s;
+        }
+        .book:hover{
+            transform:perspective(800px) rotateX(0deg) rotateY(0deg);
+            transition:1s;;
+        }
+        .book .item{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:240px;
+            height:300px;
+            text-align: center;
+            transform-origin:left;
+            transition:1s;
+        }
+        .book:after{
+            position: absolute;
+            left:15px;
+            bottom: -8px;
+            content:'';
+            width:210px;
+            height: 2px;
+            border-radius: 50%;
+            box-shadow:0px 0px 6px 6px rgba(0,0,0,0.8);
+            background-color:rgba(0,0,0,.8);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+       <div class="flip-box">
+           <div class="flip">
+               <div class="front">
+                   <img src="common/img/person-1.jpg" alt="">
+                   <p class="title">帅气的小猪</p>
+               </div>
+               <div class="back">
+                   <img src="common/img/person-4.jpg" alt="">
+                   <p class="title">女神大幂幂</p>
+               </div>
+           </div>
+       </div>
+       <div class="book" id="book">
+          <div class="item">
+            <img src="common/img/person-1.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="common/img/person-2.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="common/img/person-3.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="common/img/person-4.jpg" alt="">
+          </div>
+       </div>
+  </div>
+  <script type="text/javascript">
+      (function(){
+          var book=document.getElementById('book'),
+              pages=book.getElementsByTagName("div"),
+              len=pages.length,
+              pageNum=len-1,
+              rota=-180;
+              book.onclick=function(){
+                pages[pageNum].style.transform="rotateY("+rota+"deg)";
+                pageNum--;
+                rota +=10;
+                if(pageNum<0){
+                  for(var i=0;i<len;i++){
+                    pages[i].style.transform="rotateY(0deg)"
+                  }
+                  pageNum=len-1;
+                  rota=-180;
+                }
+              }
+      })()
+  </script>
+</body>
+</html>
