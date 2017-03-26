@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动轮播图</title>
+    <style>
+        *{margin:0;padding: 0;}
+        ul,li{list-style: none;}
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+        .slider{
+            position: relative;
+            width: 600px;
+            height: 200px;
+            margin:150px auto;
+            overflow: hidden;
+        }
+        .slider ul{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            font-size: 0;
+        }
+        .slider ul li{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider" id="slider">
+        <ul>
+            <li><img src="common/img/fj-1.jpg" alt=""></li>
+            <li><img src="common/img/fj-2.jpg" alt=""></li>
+            <li><img src="common/img/fj-3.jpg" alt=""></li>
+            <li><img src="common/img/fj-4.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        (function(w,doc){
+            function autoSlider(){
+                var slider=doc.getElementById('slider'),
+                speed=-3,
+                timer=null,
+                _ul=doc.getElementsByTagName('ul')[0],
+                _li=doc.getElementsByTagName('li');
+                _ul.innerHTML= _ul.innerHTML+ _ul.innerHTML;
+                _ul.style.width=_li[0].offsetWidth*_li.length+'px';
+                timer=setInterval(autoLeft,30);
+                function autoLeft(){
+                    if(_ul.offsetLeft<=-_ul.offsetWidth/2){
+                        _ul.style.left='0';
+                    }
+                    if(_ul.offsetLeft>0){
+                        _ul.style.left=_ul.offsetWidth/2+'px';
+                    }
+                    _ul.style.left=_ul.offsetLeft+speed+'px';
+                }
+                slider.onmouseover=function(){
+                    clearInterval(timer);
+                }
+                slider.onmouseout=function(){
+                    timer=setInterval(autoLeft,30);
+                }
+            }
+            autoSlider()
+        })(window,document);
+    </script>
+</body>
+</html>

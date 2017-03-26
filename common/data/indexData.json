@@ -21,6 +21,9 @@ var data={
             },{
                 "url":"animation",
                 "name":"div动画"
+            },{
+                "url":"slider",
+                "name":"无缝滚动图片"
             }
     ]
 }
