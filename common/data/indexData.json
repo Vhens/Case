@@ -30,6 +30,9 @@ var data={
             },{
                 "url":"fiml",
                 "name":"胶卷式放映图片"
+            },{
+                "url":"calendar",
+                "name":"简单日历"
             }
     ]
 }

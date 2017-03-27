@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>简单日历</title>
+    <meta charset="utf-8" />
+    <style>
+       body,html,div,p{
+            margin:0;
+            padding: 0;
+            box-sizing:border-box;
+       }
+        .calendar{
+            width:600px;
+            margin:50px auto;
+        }
+        .calendar .title{
+            width:100%;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border-width:1px 1px 0 1px;
+            border-style: solid;
+            border-color:#708090;
+            font-size: 16px;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px #f36;
+            color:#fff;
+        }
+        .calendar .header,
+        .caleander .body{
+            font-size: 0;
+        }
+        .calendar .header .cell,
+        .calendar .body .cell{
+            display:inline-block;
+            width:14.28%;
+            height:60px;
+            border:1px solid #708090;
+            font-size: 16px;
+            line-height:60px;
+            text-align:center;
+        }
+        .calendar .header .cell{
+            border-bottom: none;
+        }
+        .calendar .header .cell:not(:last-child){
+            border-right: none;
+        }
+        .calendar .body .cell:not(:nth-child(7n)){
+            border-right: none;
+        }
+        .calendar .body .cell:nth-child(-n+35){
+            border-bottom: none;
+        }
+        .outer{
+            background-color:#ececec;
+        }
+        .cur{
+            color:#fff;
+            background-color:#ff8c00;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+         <p class="title"></p>
+        <div class="header">
+            <div class="cell">日</div>
+            <div class="cell">一</div>
+            <div class="cell">二</div>
+            <div class="cell">三</div>
+            <div class="cell">四</div>
+            <div class="cell">五</div>
+            <div class="cell">六</div>
+        </div>
+        <div class="body"></div>
+    </div>
+    <script>
+       (function(w,doc){
+            //增加月份
+            Date.prototype.addMonths = function (mouths) {
+                var year = this.getFullYear(),
+                    month = this.getMonth(),
+                    date = this.getDate(),
+                    hour = this.getHours(),
+                    min = this.getMinutes(),
+                    sec = this.getSeconds(),
+                    milsec = this.getMilliseconds();
+                    return new Date(year, month + mouths, date, hour, min, sec, milsec);
+            }
+            //取得当月的天数
+            Date.prototype.getCurrentMonthDays = function () {
+                var year = this.getFullYear();
+                    month = this.getMonth()
+                    day = this.getDate()
+                    days = (new Date(year, month + 1, day) - new Date(year, month, day)) / (60*60*24*1000);
+                    return Math.ceil(days);
+            }
+            function init() {
+                var calenderBody = doc.querySelector(".calendar .body"),
+                    calendarTitle = doc.querySelector(".calendar .title");
+                //指定当前时间
+                var nowTime = new Date();
+                calendarTitle.innerHTML = nowTime.getFullYear() + "年" + (nowTime.getMonth() + 1) + "月" + nowTime.getDate() + "日";
+                var days = nowTime.getCurrentMonthDays();
+                //生成当月天数的格子
+                for (var i = 0; i < days; i++) {
+                    var oDiv = doc.createElement("div");
+                    oDiv.textContent = i + 1;
+                    oDiv.className = "cell";
+                    if (i + 1 === nowTime.getDate()) {
+                        oDiv.className = "cur cell";
+                    }
+                    calenderBody.appendChild(oDiv);
+                }
+                var prevMonthDays = nowTime.addMonths(-1).getCurrentMonthDays(),
+                    firstDayWeek = new Date(nowTime.getFullYear(), nowTime.getMonth(), 1).getDay();
+                //补充第一排上个月的格子
+                for (var i = 0; i < firstDayWeek; i++) {
+                    var oDiv = doc.createElement("div");
+                        oDiv.textContent = prevMonthDays - i;
+                        oDiv.className = "outer cell"
+                        calenderBody.insertBefore(oDiv,calenderBody.firstChild);
+                }
+                var lastDayWeek = new Date(nowTime.getFullYear(), nowTime.getMonth(), days).getDay();
+                //补充最后一排下个月的格子
+                for (var i = 0; i < 13 - lastDayWeek; i++) {
+                    var oDiv = doc.createElement("div");
+                    oDiv.textContent = i+1;
+                    oDiv.className = "outer cell"
+                    calenderBody.appendChild(oDiv);
+                }
+            }
+        init()
+       })(window,document);
+    </script>
+</body>
+</html>
