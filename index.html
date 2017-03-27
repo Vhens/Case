@@ -62,6 +62,7 @@
         overflow:hidden;
         text-overflow:ellipsis;
         white-space:nowrap;
+        transition: all 0.4s linear;
     }
     .box{
         height: 100%;
@@ -78,13 +79,19 @@
     .item{
   /*     -webkit-box-flex: 1;
         box-flex: 1;*/
+        position: relative;
         display: inline-block;
         margin:5px;
         width: 7.8%;
         height: 150px;
         line-height: 150px;
+        border-radius: 4px;
         -webkit-animation: dialogOpen 1s linear;
         animation: dialogOpen 1s linear;
+    }
+    .item:hover{
+        transform: scale(1.1);
+        transition: all 0.4s linear;
     }
     @keyframes dialogOpen {
         0% {
