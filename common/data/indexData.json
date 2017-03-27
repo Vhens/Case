@@ -24,10 +24,12 @@ var data={
             },{
                 "url":"slider",
                 "name":"无缝滚动图片"
-            }
-            ,{
+            },{
                 "url":"turn",
                 "name":"CSS3图片翻转"
+            },{
+                "url":"fiml",
+                "name":"胶卷式放映图片"
             }
     ]
 }
