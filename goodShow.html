@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品展示效果</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .good{
+            position: relative;
+            width:600px;
+            margin:150px auto;
+        }
+        .good .bigImg{
+            width: 100%;
+        }
+        .good .smallImg{
+             margin-top:20px;
+             height:80px;
+             font-size: 0;
+             overflow: hidden;
+        }
+        .good .smallImg li{
+            display: inline-block;
+            width: 24%;
+            height: 100%;
+        }
+        .good .smallImg li:not(:last-child){
+            margin-right: 1.32%;
+        }
+    </style>
+</head>
+<body>
+    <div class="good">
+        <div class="bigImg"><img src="common/img/hzw-1.jpg" alt=""></div>
+        <ul class="smallImg">
+            <li><img src="common/img/hzw-1.jpg" alt=""></li>
+            <li><img src="common/img/hzw-2.jpg" alt=""></li>
+            <li><img src="common/img/hzw-3.jpg" alt=""></li>
+            <li><img src="common/img/hzw-4.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        (function(w,doc){
+            var bigImgSrc=doc.querySelector('.bigImg img'),
+                oLi=doc.querySelectorAll('.smallImg li'),
+                len=oLi.length,
+                oSrc=null;
+                for(var i=0;i<len;i++){
+                    oLi[i].onclick=function(){
+                        oSrc= this.getElementsByTagName('img')[0].getAttribute('src');
+                        bigImgSrc.setAttribute('src',oSrc);
+                    }
+                }
+        })(window,document);
+    </script>
+</body>
+</html>

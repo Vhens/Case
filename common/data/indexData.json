@@ -33,6 +33,9 @@ var data={
             },{
                 "url":"calendar",
                 "name":"简单日历"
+            },{
+                "url":"goodShow",
+                "name":"商品展示效果"
             }
     ]
 }
