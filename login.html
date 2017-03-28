@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <style>
+        *{margin:0;padding:0;}
+        .login{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            width: 600px;
+            height: 400px;
+            background-color: #ecf0f1;
+            /*border:1px solid #708090;*/
+            border-radius: 10px;
+            margin:-200px 0 0 -300px;
+        }
+        .login_fm{
+            margin:100px 0 0 60px;
+        }
+        label{
+            display: inline-block;
+            width: 100px;
+            font-size: 16px;
+            color:#888;
+            text-align: right;
+        }
+        input[type="text"],input[type='password']{
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            padding-left: 5px;
+            margin-bottom: 20px;
+            outline: none;
+            font-size: 16px;
+            color:#888;
+        }
+        input[name="username"],input[name="password"]{
+            width:240px;
+        }
+        input[name="code"]{
+            width: 120px;
+        }
+        input[type="button"]{
+            width: 240px;
+            height: 30px;
+            border:none;
+            border-radius: 8px;
+            margin-left: 110px;
+            font-size: 16px;
+            color:#fff;
+            background-color: #73c902;
+            line-height: 30px;
+            text-align: center;
+            outline: none;
+        }
+        .login .yzm{
+            display: inline-block;
+            width: 110px;
+            height: 30px;
+            border-radius: 8px;
+            background-color: #4394f0;
+            text-align: center;
+            line-height: 24px;
+            font-size: 22px;
+            color:#fff;
+
+        }
+        .tip{
+            display: inline-block;
+            opacity: 0;
+            color:red;
+        }
+        .error:before,.sure:before{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            line-height: 16px;
+            font-size: 14px;
+            margin-right: 5px;
+            text-align: center;
+            border-radius: 50%;
+            font-family:微软雅黑;
+        }
+        .error:before{
+            content: '×';
+            border:1px solid red;
+        }
+        .sure:before{
+            content: '√';
+            border:1px solid green;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <form action="" class="login_fm">
+            <div class="item">
+                <label for="username">用户名</label>
+                <input type="text" name="username" id="username" autocomplete="off" placeholder="请输入用户名">
+                <span id="userTip" class="tip"></span>
+            </div>
+            <div class="item">
+                <label for="password">密&nbsp;码</label>
+                <input type="password" name="password" id="password" placeholder="请输入密码">
+                <span id="pwdTip" class="tip sure"></span>
+            </div>
+             <div class="item">
+                <label for="code">验证码</label>
+                <input type="text" name="code" id="code" placeholder="请输入验证码">
+                <span id="yzm" class="yzm">ssss</span>
+                <span id="codeTip" class="tip"></span>
+            </div>
+            <div class="item"><input type="button" id="btn" value="登录"></div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        (function(w,doc){
+            var oUser=doc.getElementById('username'),
+                oPassword=doc.getElementById('password'),
+                oYzm=doc.getElementById('yzm'),
+                oCode=doc.getElementById('code'),
+                userTip=doc.getElementById('userTip'),
+                pwdTip=doc.getElementById('pwdTip'),
+                codeTip=doc.getElementById('codeTip'),
+                btn=doc.getElementById('btn');
+            //验证码
+            function randomCode(){
+                var codeArr=[ '1','2','3','4','5','6','7','8','9','0',  'a','b','c','d','e','f','g','h','i','j',  'k','l','m','n','o','p','q','r','s','t',  'u','v','w','x','y','z',  'A','B','C','D','E','F','G','H','I','J',  'K','L','M','N','O','P','Q','R','S','T',  'U','V','W','X','Y','Z'],
+                 codeStr="";
+                var len=codeArr.length;
+                for(var i=0;i<4;i++){
+                    var j=parseInt(Math.random()*len);
+                    codeStr+=codeArr[j];
+                }
+                oYzm.innerHTML=codeStr;
+            }
+            oYzm.onclick=randomCode;
+            //数据验证
+            var check={
+                username:function(){
+                    if(oUser.value==""||oUser.value==null){
+                        userTip.innerHTML='用户名不能为空!';
+                        userTip.className="error tip";
+                        userTip.style.opacity='1';
+                    }else{
+                        userTip.innerHTML='';
+                        userTip.className="sure tip";
+                        userTip.style.opacity='1';
+                    }
+                },
+                password:function(){
+                    if(oPassword.value==""||oPassword.value==null){
+                        pwdTip.innerHTML='密码不正确!';
+                        pwdTip.className="error tip";
+                        pwdTip.style.opacity='1';
+                    }else{
+                        pwdTip.innerHTML='';
+                        pwdTip.className="sure tip";
+                        pwdTip.style.opacity='1';
+                    }
+                },
+                code:function(){
+                    if(oCode.value!=oYzm.innerHTML){
+                        codeTip.innerHTML='验证码不正确!';
+                        codeTip.className="error tip";
+                        codeTip.style.opacity='1';
+                    }else{
+                        codeTip.innerHTML='';
+                        codeTip.className="sure tip";
+                        codeTip.style.opacity='1';
+                    }
+                }
+            }
+            oUser.onblur=function(){
+                oPassword.focus();
+            }
+            oPassword.onblur=function(){
+                oCode.focus();
+            }
+            btn.onclick=function(){
+                check.username();
+                check.password();
+                check.code();
+            }
+        })(window,document);
+    </script>
+</body>
+</html>
