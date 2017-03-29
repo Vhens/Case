@@ -193,7 +193,7 @@
                 oCode.focus();
             }
             btn.onclick=function(){
-                if(check.username()||check.password()|| check.code()){
+                if(check.username()&&check.password()&& check.code()){
                     return false;
                 }else{
                     if(oUser.value=="admin"&&oPassword.value=="123456"){
