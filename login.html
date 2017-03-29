@@ -100,18 +100,18 @@
         <form action="" class="login_fm">
             <div class="item">
                 <label for="username">用户名</label>
-                <input type="text" name="username" id="username" autocomplete="off" placeholder="请输入用户名">
+                <input type="text" name="username" id="username" autocomplete="off" placeholder="请输入用户名" value="admin">
                 <span id="userTip" class="tip"></span>
             </div>
             <div class="item">
                 <label for="password">密&nbsp;码</label>
-                <input type="password" name="password" id="password" placeholder="请输入密码">
+                <input type="password" name="password" id="password" placeholder="请输入密码" value="123456">
                 <span id="pwdTip" class="tip sure"></span>
             </div>
              <div class="item">
                 <label for="code">验证码</label>
                 <input type="text" name="code" id="code" placeholder="请输入验证码">
-                <span id="yzm" class="yzm">ssss</span>
+                <span id="yzm" class="yzm"></span>
                 <span id="codeTip" class="tip"></span>
             </div>
             <div class="item"><input type="button" id="btn" value="登录"></div>
@@ -138,6 +138,7 @@
                 }
                 oYzm.innerHTML=codeStr;
             }
+            randomCode();
             oYzm.onclick=randomCode;
             //数据验证
             var check={
@@ -182,9 +183,15 @@
                 oCode.focus();
             }
             btn.onclick=function(){
-                check.username();
-                check.password();
-                check.code();
+                if(check.username()||check.password()|| check.code()){
+                    return false;
+                }else{
+                    if(oUser.value=="admin"&&oPassword.value=="123456"){
+                        window.location.href="index.html";
+                    }else{
+                        alert('用户名或密码错误!');
+                    }
+                }
             }
         })(window,document);
     </script>
