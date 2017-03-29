@@ -165,7 +165,7 @@
                 },
                 password:function(){
                     if(oPassword.value==""||oPassword.value==null){
-                        pwdTip.innerHTML='密码不正确!';
+                        pwdTip.innerHTML='密码不能为空!';
                         pwdTip.className="error tip";
                         pwdTip.style.opacity='1';
                     }else{
@@ -175,10 +175,11 @@
                     }
                 },
                 code:function(){
-                    if(oCode.value!=oYzm.innerHTML){
-                        codeTip.innerHTML='验证码不正确!';
+                    if(oCode.value==""){
+                        codeTip.innerHTML='验证码不能为空!';
                         codeTip.className="error tip";
                         codeTip.style.opacity='1';
+                        return false;
                     }else{
                         codeTip.innerHTML='';
                         codeTip.className="sure tip";
@@ -187,20 +188,31 @@
                 }
             }
             oUser.onblur=function(){
+                check.username();
                 oPassword.focus();
             }
             oPassword.onblur=function(){
+                check.password();
                 oCode.focus();
             }
+            oCode.onblur=function(){
+                check.code();
+            }
             btn.onclick=function(){
-                if(check.username()&&check.password()&& check.code()){
-                    return false;
+                if(oUser.value!="admin"){
+                    userTip.innerHTML='用户名不正确';
+                    userTip.className="error tip";
+                    userTip.style.opacity='1';
+                }else if(oPassword.value!="123456"){
+                    pwdTip.innerHTML='密码不正确!';
+                    pwdTip.className="error tip";
+                    pwdTip.style.opacity='1';
+                }else if(oCode.value!=oYzm.innerHTML){
+                    codeTip.innerHTML='验证码不正确!';
+                    codeTip.className="error tip";
+                    codeTip.style.opacity='1';
                 }else{
-                    if(oUser.value=="admin"&&oPassword.value=="123456"){
-                        window.location.href="index.html";
-                    }else{
-                        alert('用户名或密码错误!');
-                    }
+                     window.location.href="index.html";
                 }
             }
         })(window,document);
