@@ -20,7 +20,8 @@
             overflow: hidden;
         }
         .banner ul{
-            width: 100%;
+            position: absolute;
+            width: 700%;
             font-size: 0;
         }
         .banner li{
@@ -94,131 +95,90 @@
             function $(id) {
                 return typeof id === 'string' ? document.getElementById(id) : id;
             }
-
-            function init(wrap, pic, point, prev, next, isAuto) {
-                    var pic = $(pic),
-                        prev = $(prev),
-                        next = $(next),
-                        index = 0,
-                        timer = null,
-                        len = pic.getElementsByTagName('li').length,
-                        liWidth = pic.getElementsByTagName('li')[0].offsetWidth;
-                    pic.style.width = len * liWidth + 'px';
-                    if (isAuto) {
-                        auto();
-                        if (wrap) {
-                            var wrap = $(wrap);
-                            wrap.onmouseover = clear;
-                            wrap.onmouseout = auto;
-                        }
-                    }
-                    if (prev && next) {
-                        next.onclick = function() {
-                            index++;
-                            if (index >= len) {
-                                index = 0;
-                            }
-                            change(index);
-                        }
-                        prev.onclick = function() {
-                            index--;
-                            if (index < 0) {
-                                index = len - 1;
-                            }
-                            change(index);
-                        }
-                    }
-                    if (point) {
-                        var point = $(point).getElementsByTagName('span');
-                        for (var i = 0; i < len; i++) {
-                            point[i].num = i;
-                            point[i].onclick = function() {
-                                change(this.num);
-                            }
-                        }
-                    }
-
-                    function auto() {
-                        timer = setInterval(function() {
-                            index++;
-                            if (index >= len) {
-                                index = 0;
-                            }
-                            change(index);
-                        }, 5000);
-                    }
-
-                    function clear() {
-                        clearInterval(timer);
-                    }
-
-                    function change(curIndex) {
-
-                        //缓动
-                        var Tween = {
-                            Linear: function(t, b, c, d) {
-                                return c * t / d + b;
-                            },
-                            Quad: {
-                                easeIn: function(t, b, c, d) {
-                                    return c * (t /= d) * t + b;
-                                },
-                                easeOut: function(t, b, c, d) {
-                                    return -c * (t /= d) * (t - 2) + b;
-                                },
-                                easeInOut: function(t, b, c, d) {
-                                    if ((t /= d / 2) < 1) return c / 2 * t * t + b;
-                                    return -c / 2 * ((--t) * (t - 2) - 1) + b;
-                                }
-                            },
-                            Back: {
-                                easeIn: function(t, b, c, d, s) {
-                                    if (s == undefined){
-                                        s = 1.70158;
-                                    }
-                                    return c * (t /= d) * t * ((s + 1) * t - s) + b;
-                                },
-                                easeOut: function(t, b, c, d, s) {
-                                    if (s == undefined){
-                                        s = 1.70158;
-                                    }
-                                    return c * ((t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
-                                },
-                                easeInOut: function(t, b, c, d, s) {
-                                    if (s == undefined){
-                                        s = 1.70158;
-                                    }
-                                    if ((t /= d / 2) < 1){
-                                        return c / 2 * (t * t * (((s *= (1.525)) + 1) * t - s)) + b;
-                                    }
-                                    return c / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2) + b;
-                                }
-                            }
-                        }
-
-                        var b = (curIndex - len + 2) * liWidth,
-                            c = -liWidth,
-                            d = 30,
-                            t = 0;
-                        function run() {
-                            pic.style.marginLeft = Math.ceil(Tween.Quad.easeInOut(t, b, c, d)) + 'px';
-                            if (t < d) {
-                                t++;
-                                setTimeout(run, 20);
-                            }
-                        }
-
-                        run();
-                        if (point) {
-                            for (var n = 0; n < len; n++) {
-                                point[n].className = 'point';
-                            }
-                            point[curIndex].className = 'point cur';
-                        }
-                        index = curIndex;
-                    }
+            function autoCarousel(){
+                    this.init(obj, point);
             }
-            init('banner','pic','num','prev','next',true);
+            autoCarousel.prototype = {
+                init:function(obj,point){
+                    var _this=this,
+                        len=$('banner').getElementsByTagName('li').length,
+                        liW=$('banner').getElementsByTagName('li')[0].offsetWidth;
+                    this.obj=obj;
+                    this.num=len;
+                    this.point=point;
+                    this.width=liW;
+                    this.index=0;
+                    this.flag=true;
+                    this.timer=null;
+                    this.prev=doc.getElementById('prev');
+                    this.next=doc.getElementById('next');
+                    this.autoTimer=setInterval(function(){
+                        _this.Next();
+                    },3000);
+                    this.obj.onmouseover=function(){
+                        clearInterval(_this.autoTimer);
+                    };
+                    this.obj.onmuseout=function(){
+                        _this.autoTimer=setInterval(function(){
+                            _this.Next();
+                        },3000);
+                    };
+                    this.prev.onclick=function(){
+                        _this.Prev();
+                    };
+                    this.next.onclick=function(){
+                        _this.Next();
+                    };
+                    for(var i=0;i<this.num;i++){
+                        this.point[i].index=i;
+                        this.point[i].onmouseover=function(){
+                            _this.index=this.index;
+                            _this.move(this.index);
+                        }
+                    }
+                },
+                Prev:function(){
+                    this.index--;
+                    if(this.index===-1){
+                        this.index=this.num;
+                        this.obj.style.left=(this.index)*(-this.width)+'px';
+                        this.index--;
+                    }
+                    this.move(this.index);
+                },
+                Next:function(){
+                    this.index++;
+                    if(this.index===this.num){
+                        this.index=0;
+                        this.obj.style.left="0";
+                    }
+                    this.move(this.index);
+                },
+                move:function(index,callBack){
+                    var translate=-(index)*this.width;
+                    var _this=this;
+                    clearInterval(_this.timer);
+                    for(var i=0;i<this.num;i++){
+                        this.point[i].className='point';
+                    }
+                    index===-1?index=this.num:'';
+                    this.point[index].className="point cur";
+                    _this.timer=setInterval(function(){
+                        var iSpeed=(translate-_this.obj.offsetLeft)/_this.num;
+                        iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                        if(iSpeed===0){
+                            clearInterval(_this.timer);
+                            callBack&&callBack.call(_this);
+                        }else{
+
+                            _this.obj.style.left =  _this.obj.offsetLeft + iSpeed + 'px';
+                        }
+                    },25);
+                }
+            };
+                var obj = document.getElementById('pic');
+                var point = document.getElementById('num').getElementsByTagName('span');
+                new autoCarousel(obj , point);
         })(window,document);
     </script>
 </body>
