@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{margin:0;padding:0;}
+        img {
+            width: 100%;
+            height: 100%;
+            border: none;
+            vertical-align: middle;
+        }
+        .banner{
+            position: relative;
+            width:960px;
+            height: 300px;
+            margin:150px auto;
+            cursor:pointer;
+            overflow: hidden;
+        }
+        .banner ul{
+            width: 100%;
+            font-size: 0;
+        }
+        .banner li{
+            display: inline-block;
+            width:960px;
+            height: 300px;
+        }
+        .banner .num{
+            position:absolute;
+            left: 45%;
+            bottom: 20px;
+        }
+        .banner .num .point{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .banner .arrow{
+            position: absolute;
+            top: 40%;
+            display: inline-block;
+            width: 45px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 28px;
+            text-align: center;
+            color:#fff;
+            opacity: 0;
+            transition: all .5s ease;
+            background-color: rgba(0,0,0,.6);
+        }
+        .banner:hover .arrow{
+            opacity: 1;
+        }
+        .banner .left{
+            left: 0;
+        }
+        .banner .right{
+            right: 0;
+        }
+        .cur{
+            background-color:#4394f0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner" id="banner">
+        <ul id="pic">
+            <li><img src="common/img/banner-1.jpg" alt=""></li>
+            <li><img src="common/img/banner-2.jpg" alt=""></li>
+            <li><img src="common/img/banner-3.jpg" alt=""></li>
+            <li><img src="common/img/banner-4.jpg" alt=""></li>
+            <li><img src="common/img/banner-5.jpg" alt=""></li>
+            <li><img src="common/img/banner-6.jpg" alt=""></li>
+        </ul>
+        <div id="num" class="num">
+            <span class="point cur"></span>
+            <span class="point"></span>
+            <span class="point"></span>
+            <span class="point"></span>
+            <span class="point"></span>
+            <span class="point"></span>
+        </div>
+        <span class="arrow left" id="prev">&lt;</span>
+        <span class="arrow right" id=next>&gt;</span>
+    </div>
+    <script type="text/javascript">
+        (function(w,doc){
+            function $(id) {
+                return typeof id === 'string' ? document.getElementById(id) : id;
+            }
+
+            function init(wrap, pic, point, prev, next, isAuto) {
+                    var pic = $(pic),
+                        prev = $(prev),
+                        next = $(next),
+                        index = 0,
+                        timer = null,
+                        len = pic.getElementsByTagName('li').length,
+                        liWidth = pic.getElementsByTagName('li')[0].offsetWidth;
+                    pic.style.width = len * liWidth + 'px';
+                    if (isAuto) {
+                        auto();
+                        if (wrap) {
+                            var wrap = $(wrap);
+                            wrap.onmouseover = clear;
+                            wrap.onmouseout = auto;
+                        }
+                    }
+                    if (prev && next) {
+                        next.onclick = function() {
+                            index++;
+                            if (index >= len) {
+                                index = 0;
+                            }
+                            change(index);
+                        }
+                        prev.onclick = function() {
+                            index--;
+                            if (index < 0) {
+                                index = len - 1;
+                            }
+                            change(index);
+                        }
+                    }
+                    if (point) {
+                        var point = $(point).getElementsByTagName('span');
+                        for (var i = 0; i < len; i++) {
+                            point[i].num = i;
+                            point[i].onclick = function() {
+                                change(this.num);
+                            }
+                        }
+                    }
+
+                    function auto() {
+                        timer = setInterval(function() {
+                            index++;
+                            if (index >= len) {
+                                index = 0;
+                            }
+                            change(index);
+                        }, 5000);
+                    }
+
+                    function clear() {
+                        clearInterval(timer);
+                    }
+
+                    function change(curIndex) {
+
+                        //缓动
+                        var Tween = {
+                            Linear: function(t, b, c, d) {
+                                return c * t / d + b;
+                            },
+                            Quad: {
+                                easeIn: function(t, b, c, d) {
+                                    return c * (t /= d) * t + b;
+                                },
+                                easeOut: function(t, b, c, d) {
+                                    return -c * (t /= d) * (t - 2) + b;
+                                },
+                                easeInOut: function(t, b, c, d) {
+                                    if ((t /= d / 2) < 1) return c / 2 * t * t + b;
+                                    return -c / 2 * ((--t) * (t - 2) - 1) + b;
+                                }
+                            },
+                            Back: {
+                                easeIn: function(t, b, c, d, s) {
+                                    if (s == undefined){
+                                        s = 1.70158;
+                                    }
+                                    return c * (t /= d) * t * ((s + 1) * t - s) + b;
+                                },
+                                easeOut: function(t, b, c, d, s) {
+                                    if (s == undefined){
+                                        s = 1.70158;
+                                    }
+                                    return c * ((t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
+                                },
+                                easeInOut: function(t, b, c, d, s) {
+                                    if (s == undefined){
+                                        s = 1.70158;
+                                    }
+                                    if ((t /= d / 2) < 1){
+                                        return c / 2 * (t * t * (((s *= (1.525)) + 1) * t - s)) + b;
+                                    }
+                                    return c / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2) + b;
+                                }
+                            }
+                        }
+
+                        var b = (curIndex - len + 2) * liWidth,
+                            c = -liWidth,
+                            d = 30,
+                            t = 0;
+                        function run() {
+                            pic.style.marginLeft = Math.ceil(Tween.Quad.easeInOut(t, b, c, d)) + 'px';
+                            if (t < d) {
+                                t++;
+                                setTimeout(run, 20);
+                            }
+                        }
+
+                        run();
+                        if (point) {
+                            for (var n = 0; n < len; n++) {
+                                point[n].className = 'point';
+                            }
+                            point[curIndex].className = 'point cur';
+                        }
+                        index = curIndex;
+                    }
+            }
+            init('banner','pic','num','prev','next',true);
+        })(window,document);
+    </script>
+</body>
+</html>

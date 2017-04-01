@@ -36,6 +36,9 @@ var data={
             },{
                 "url":"goodShow",
                 "name":"商品展示效果"
+            },{
+                "url":"banner",
+                "name":"轮播图"
             }
     ]
 }
