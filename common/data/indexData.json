@@ -1,6 +1,9 @@
 var data={
     indexData:[
             {
+                "url":"vitae/index",
+                "name":"个人简历"
+            },{
                 "url":"cool/cube",
                 "name":"3D立方体"
             },{
