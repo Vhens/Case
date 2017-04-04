@@ -1,43 +1,43 @@
 var data={
     indexData:[
             {
-                "url":"cube",
+                "url":"cool/cube",
                 "name":"3D立方体"
             },{
-                "url":"barrage",
+                "url":"cool/barrage",
                 "name":"弹幕"
             },{
-                "url":"bright",
+                "url":"cool/bright",
                 "name":"白光闪过"
             },{
-                "url":"magnifier",
+                "url":"cool/magnifier",
                 "name":"放大镜"
             },{
-                "url":"carousel",
+                "url":"cool/carousel",
                 "name":"js图片切换"
             },{
-                "url":"roll",
+                "url":"cool/roll",
                 "name":"(公告)文字滚动"
             },{
-                "url":"animation",
+                "url":"cool/animation",
                 "name":"div动画"
             },{
-                "url":"slider",
+                "url":"cool/slider",
                 "name":"无缝滚动图片"
             },{
-                "url":"turn",
+                "url":"cool/turn",
                 "name":"CSS3图片翻转"
             },{
-                "url":"film",
+                "url":"cool/film",
                 "name":"胶卷式放映图片"
             },{
-                "url":"calendar",
+                "url":"cool/calendar",
                 "name":"简单日历"
             },{
-                "url":"goodShow",
+                "url":"cool/goodShow",
                 "name":"商品展示效果"
             },{
-                "url":"banner",
+                "url":"cool/banner",
                 "name":"轮播图"
             }
     ]

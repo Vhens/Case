@@ -1,0 +1,270 @@
+body{
+    font-family:'Microsoft YaHei',sans-serif;
+}
+section,body,html,ul,li,p,div,i,img,span,h1{
+    box-sizing:border-box;
+}
+ul,li{
+    list-style-type: none;
+}
+.cricle{
+    position: fixed;
+    right: 20px;
+    top: 300px;
+}
+.cricle li{
+    margin-top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+.cur{
+    background-color: rgba(0,0,0,.7) !important;
+}
+.wrapper .title{
+    width:100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    color:#fff;
+}
+.navbar-default{
+    border:none;
+    background-color: #82aa9f;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.6);
+}
+.navbar-default .navbar-brand{
+    height: 70px;
+    line-height: 35px;
+    font-size:24px;
+    font-weight: bold;
+    color:#fff;
+}
+ .navbar-default .navbar-brand:hover{
+    color:pink;
+ }
+.navbar-nav>li>a{
+    height: 70px;
+    line-height: 35px;
+    font-size: 16px;
+    color:#fff !important;
+}
+
+.navbar-default .navbar-toggle{
+    margin-top: 17px;
+}
+.navbar-default .navbar-toggle:hover{
+    border-color:red;
+    background-color: rgb(69,210,184) !important;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #1c9982;
+}
+.information,
+.about,
+.technology,
+.project,
+.contact{
+    width: 100%;
+    height:650px;
+}
+/*基本资料*/
+.information{
+    position: relative;
+    padding-top:120px;
+    text-align: center;
+    background-size: 50px 50px;
+    background-color: #ac0;
+    background-image: linear-gradient(45deg, rgba(130, 169, 159, .2) 25%, transparent 25%, transparent 50%, rgba(130, 169, 159, .2) 50%, rgba(130, 169, 159, .2) 75%, transparent 75%, transparent);
+}
+.information .vhen{
+    width:200px;
+    height: 200px;
+    margin-left: 42%;
+    border-radius: 50%;
+}
+
+#myBg{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 580px;
+}
+.information .vhen:hover{
+    transform: rotate(360deg) scale(1.2);
+    transition:all 3s ease;
+}
+.information .vhen img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.information h1,
+.information .name,
+.information .profession,
+.information .email{
+    font-size: 20px;
+    -webkit-text-fill-color: pink;/*文字的填充色*/
+    -webkit-text-stroke: 1px #fff;
+}
+.information hr{
+    border-color:pink;
+}
+.information .name{
+    font-size:18px;
+}
+/*关于我*/
+.about{
+    background-color: #6d695c;
+    background-image:
+        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
+}
+.about ul{
+    text-align: center;
+    font-size: 0;
+}
+.about li{
+    display: inline-block;
+    width:33.33%;
+    margin-bottom: 30px;
+}
+.about li .item{
+    width: 10rem;
+    height:10rem;
+    margin:0 auto;
+    text-align: center;
+    border-radius: 50%;
+}
+.about li .item:hover{
+    transform: scale(1.2);
+    transition: all .6s ease;
+}
+.about li .item:hover .icon{
+    transform: rotate(360deg);
+    transition: all .6s ease;
+}
+.about li:nth-of-type(1) .item{
+    background-color:#3295ff;
+}
+.about li:nth-of-type(2) .item{
+    background-color:#9266f9;
+}
+.about li:nth-of-type(3) .item{
+    background-color:#16c2c2;
+}
+.about li:nth-of-type(4) .item{
+    background-color:#7cba59;
+}
+.about li:nth-of-type(5) .item{
+    background-color:#ff4100;
+}
+.about li:nth-of-type(6) .item{
+    background-color:#cdbe9f;
+}
+.about li:nth-of-type(1) .item:hover+.name{
+    color:#3295ff;
+}
+.about li:nth-of-type(2) .item:hover+.name{
+    color:#9266f9;
+}
+.about li:nth-of-type(3) .item:hover+.name{
+    color:#16c2c2;
+}
+.about li:nth-of-type(4) .item:hover+.name{
+    color:#7cba59;
+}
+.about li:nth-of-type(5) .item:hover+.name{
+    color:#ff4100;
+}
+.about li:nth-of-type(6) .item:hover+.name{
+    color:#cdbe9f;
+}
+.about li .icon{
+    width: 60px;
+    height: 60px;
+    margin-top:30px;
+    fill:#fff;
+}
+.about li .name{
+    width:100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    color:#fff;
+}
+.col-md-6{
+    border: 1px solid red;
+}
+/*技术栈*/
+.technology{
+    background-color: #4a5b8b;
+}
+.technology .item-1{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border:4px dashed #fff;
+    border-radius: 50%;
+}
+.technology .item-1 span{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+.technology .item-1 span:nth-of-type(1){
+    transition: all 3s ease;
+    animation:animX 3s cubic-bezier(.36,0,.64,1) infinite;
+}
+
+/*项目经验*/
+.project{
+    background-color: #83aba1;
+}
+/*联系我*/
+.contact{
+    background-color: #49819c;
+}
+.bottom-arrow{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    transform: rotate(-90deg);
+    background-color: rgba(0,0,0,.5);
+    border-radius: 50%;
+}
+.bottom-arrow .icon{
+   animation: run 3s infinite;
+}
+@keyframes run{
+    0%{
+         transform: translateX(-5px);
+    }
+    50%{
+         transform: translateX(0px);
+    }
+    50%{
+         transform: translateX(5px);
+    }
+    100%{
+         transform: translateX(-5px);
+    }
+}
