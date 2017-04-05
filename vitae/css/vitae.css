@@ -1,4 +1,6 @@
-body{
+body,html{
+    width: 100%;
+    height: 100%;
     font-family:'Microsoft YaHei',sans-serif;
 }
 section,body,html,ul,li,p,div,i,img,span,h1{
@@ -23,18 +25,67 @@ ul,li{
 .cur{
     background-color: rgba(0,0,0,.7) !important;
 }
-.wrapper .title{
-    width:100%;
-    height: 60px;
-    line-height: 60px;
+.ribbon {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 80px;
+}
+.ribbon1:after {
+    position: absolute;
+    bottom:-20px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 76px solid transparent;
+    border-right: 76px solid transparent;
+    border-top: 20px solid #F8463F;
+}
+.ribbon1 span {
+    position: relative;
+    display: inline-block;
     text-align: center;
+    background: #F8463F;
     font-size: 24px;
-    color:#fff;
+    line-height: 1;
+    padding: 20px 8px 10px;
+    border-top-right-radius: 8px;
+    width: 150px;
+}
+.ribbon1 span:before, .ribbon1 span:after {
+    position: absolute;
+    content: "";
+    display: block;
+}
+.ribbon1 span:before {
+    background: #F8463F;
+    height: 8px;
+    width: 6px;
+    left: -6px;
+    top: 0;
+}
+.ribbon1 span:after {
+    background: #C02031;
+    height: 8px;
+    width: 10px;
+    border-radius: 8px 8px 0 0;
+    left: -10px;
+    top: 0;
 }
 .navbar-default{
     border:none;
     background-color: #82aa9f;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,.6);
+}
+.modal-dialog{
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    margin:10px auto;
 }
 .navbar-default .navbar-brand{
     height: 70px;
@@ -69,7 +120,8 @@ ul,li{
 .project,
 .contact{
     width: 100%;
-    padding-top:120px;
+    padding-top:100px;
+    text-align: center;
 }
 /*基本资料*/
 .information{
@@ -127,6 +179,7 @@ ul,li{
     font-size: 0;
 }
 .about li{
+    position: relative;
     display: inline-block;
     width:33.33%;
     margin-bottom: 30px;
@@ -138,11 +191,48 @@ ul,li{
     text-align: center;
     border-radius: 50%;
 }
-.about li .item:hover{
-    transform: scale(1.2);
-    transition: all .6s ease;
+.about li .item:before{
+    position: absolute;
+    left:128px;
+    content: '';
+    display: inline-block;
+    border: 8px solid #A8E957;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 62px;
+    opacity: 0;
+}
+.about li:hover .item:before{
+    animation: warn 1s ease-out infinite;
+}
+@keyframes warn {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    20% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    40% {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+    60% {
+        transform: scale(1.4);
+        opacity: 0.2;
+    }
+    80% {
+        transform: scale(1.6);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0.0;
+    }
 }
 .about li .item:hover .icon{
+    transform: scale(1.2);
     transform: rotate(360deg);
     transition: all .6s ease;
 }
@@ -195,9 +285,6 @@ ul,li{
     font-size: 24px;
     color:#fff;
 }
-.col-md-6{
-    border: 1px solid red;
-}
 /*技术栈*/
 .technology{
     background-color: #4a5b8b;
@@ -223,7 +310,25 @@ ul,li{
     transition: all 3s ease;
     animation:animX 3s cubic-bezier(.36,0,.64,1) infinite;
 }
-
+.technology .tagsList{
+    position:relative;
+    width:600px;
+    height:600px;
+}
+.tagsList .item {
+    position:absolute;
+    top:0px;
+    left:0px;
+    display: inline-block;
+    font-size: 36px;
+    font-weight:bold;
+    color:#fff ;
+    padding: 3px 6px;
+}
+.tagsList .item:hover {
+    transform: scale(1.5);
+    letter-spacing:2px;
+}
 /*项目经验*/
 .project{
     background-color: #83aba1;
@@ -234,7 +339,7 @@ ul,li{
 }
 .bottom-arrow{
     position: fixed;
-    bottom: 0;
+    bottom: 5px;
     left: 50%;
     display: inline-block;
     width: 30px;
