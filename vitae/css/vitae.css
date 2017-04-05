@@ -80,13 +80,7 @@ ul,li{
     background-color: #82aa9f;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,.6);
 }
-.modal-dialog{
-    position:absolute;
-    left:0;
-    right:0;
-    top:50%;
-    margin:10px auto;
-}
+
 .navbar-default .navbar-brand{
     height: 70px;
     line-height: 35px;
@@ -120,7 +114,7 @@ ul,li{
 .project,
 .contact{
     width: 100%;
-    padding-top:100px;
+    padding-top:80px;
     text-align: center;
 }
 /*基本资料*/
@@ -196,11 +190,28 @@ ul,li{
     left:128px;
     content: '';
     display: inline-block;
-    border: 8px solid #A8E957;
     width: 10rem;
     height: 10rem;
     border-radius: 62px;
     opacity: 0;
+}
+.about li:nth-of-type(1) .item:before{
+    border: 8px solid #3295ff;
+}
+.about li:nth-of-type(2) .item:before{
+    border: 8px solid #9266f9;
+}
+.about li:nth-of-type(3) .item:before{
+    border: 8px solid #16c2c2;
+}
+.about li:nth-of-type(4) .item:before{
+    border: 8px solid #7cba59;
+}
+.about li:nth-of-type(5) .item:before{
+    border: 8px solid #ff4100;
+}
+.about li:nth-of-type(6) .item:before{
+    border: 8px solid #cdbe9f;
 }
 .about li:hover .item:before{
     animation: warn 1s ease-out infinite;
@@ -312,8 +323,13 @@ ul,li{
 }
 .technology .tagsList{
     position:relative;
-    width:600px;
-    height:600px;
+    width:300px;
+    height:300px;
+}
+.technology .content{
+    text-align: left;
+    font-size: 20px;
+    color: #fff;
 }
 .tagsList .item {
     position:absolute;
@@ -325,13 +341,41 @@ ul,li{
     color:#fff ;
     padding: 3px 6px;
 }
+.ribbon .icon{
+    font-size: 20px;
+    vertical-align: top;
+}
 .tagsList .item:hover {
     transform: scale(1.5);
     letter-spacing:2px;
 }
+ .modal-content{
+    width: 800px !important;
+}
 /*项目经验*/
 .project{
     background-color: #83aba1;
+}
+.project .box,.project .item{
+    width: 800px;
+    height: 300px;
+    margin:0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.project .item:not(:first-child){
+    display: none;
+}
+.project .point{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin:10px 0 0 10px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.7);
+}
+.act{
+    background-color: #3295ff !important;
 }
 /*联系我*/
 .contact{

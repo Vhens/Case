@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="ribbon">
                   <span class="ribbon1">
-                      <span>基本资料</span>
+                      <span><i class="icon iconfont icon-ziliao"></i>&nbsp;基本资料</span>
                   </span>
                 </div>
                 <div class="vhen">
@@ -72,7 +72,7 @@
              <div class="row">
                   <div class="ribbon">
                     <span class="ribbon1">
-                        <span>关于我</span>
+                        <span><i class="icon iconfont icon-guanyuwo"></i>&nbsp;关于我</span>
                     </span>
                   </div>
                  <ul>
@@ -134,11 +134,11 @@
           <div class="container">
               <div class="ribbon">
                 <span class="ribbon1">
-                    <span>技术栈</span>
+                    <span><i class="icon iconfont icon-jishuqiangying"></i>&nbsp;技术栈</span>
                 </span>
               </div>
               <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-5 text-right">
                     <div id="tagsList" class="tagsList">
                         <span class="item" data-toggle="modal" data-target=".modal">
                           <i class="icon iconfont">&#xe608;</i>&nbsp;HTML5
@@ -165,26 +165,31 @@
                           <i class="icon iconfont icon-mySql"></i>&nbsp;Mysql
                         </span>
                         <span class="item" data-toggle="modal" data-target=".modal">
-                          &nbsp;es6
+                           <i class="icon iconfont icon-es"></i>&nbsp;es6
                         </span>
                         <span class="item" data-toggle="modal" data-target=".modal">
-                          &nbsp;PS
+                           <i class="icon iconfont icon-ps"></i>&nbsp;PS
                         </span>
                         <span class="item" data-toggle="modal" data-target=".modal">
-                          &nbsp;Github
+                           <i class="icon iconfont icon-mySql"></i>&nbsp;Github
                         </span>
                         <span class="item" data-toggle="modal" data-target=".modal">
-                          &nbsp;Git
+                           <i class="icon iconfont icon-git1"></i>&nbsp;Git
                         </span>
                         <span class="item" data-toggle="modal" data-target=".modal">
-                          &nbsp;SVN
+                           <i class="icon iconfont icon-SVN"></i>&nbsp;SVN
                         </span>
                         <span class="item" data-toggle="modal" data-target=".modal">
-                          &nbsp;sublime text3
+                           <i class="icon iconfont icon-mySql"></i>&nbsp;sublime text3
                         </span>
                     </div>
                   </div>
-                  <div class="col-md-6">3</div>
+                  <div class="col-md-7">
+                    <p class="content">主写pc、移动端项目、thinkphp研发</p>
+                    <p class="content">深谙自动化、组件化、模块化开发之道</p>
+                    <p class="content">编写代码常思其健壮性、扩展性、维护性、代码规范强迫症</p>
+                    <p class="content">高效的自学能力、具备独立分析解决问题能力</p>
+                  </div>
               </div>
           </div>
      </section>
@@ -196,7 +201,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title text-center">技术熟练度</h4>
           </div>
-          <div class="modal-body" id="map">
+          <div class="modal-body" id="map" style="width:800px;height: 500px;">
 
           </div>
         </div>
@@ -209,8 +214,24 @@
               <div class="row">
                   <div class="ribbon">
                     <span class="ribbon1">
-                        <span>项目经验</span>
+                        <span><i class="icon iconfont icon-xiangmu"></i>&nbsp;项目经验
                     </span>
+                  </div>
+                  <div class="box" id="box">
+                        <div id="box-item">
+                            <div class="item" index="1">
+                               1
+                            </div>
+                            <div class="item" index="2">
+                               2
+                            </div>
+                            <div class="item" index="3">
+                               3
+                            </div>
+                        </div>
+                        <span class="point act"></span>
+                        <span class="point"></span>
+                        <span class="point"></span>
                   </div>
               </div>
           </div>
@@ -222,7 +243,7 @@
               <div class="row">
                   <div class="ribbon">
                     <span class="ribbon1">
-                        <span>联系我</span>
+                        <span><i class="icon iconfont icon-lianxi"></i>&nbsp;联系我</span>
                     </span>
                   </div>
               </div>
@@ -249,7 +270,85 @@
 <script type="text/javascript" src="js/vitae.js"></script>
 <script type="text/javascript" src="icon/iconfont.js"></script>
 <script type="text/javascript">
+   var myChart=echarts.init(document.getElementById('map'));
+   var title= ['HTML5','CSS3','JS','Jquery','Vue','Mysql','Thinkphp','Sass','bootstrap','git','github','svn'];
+   var mastery=[90, 90 ,82, 90, 60, 80, 80, 90, 92, 95,95,80];
+    option = {
+        title : {
+            text: '技术栈',
+            textStyle:{
+              color :'#666'
+            }
+        },
+        tooltip : {
+            trigger: 'axis',
+             axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            },
+            // formatter: '{b}:\n{c}%'
+        },
+        // legend: {
+        //     data:['熟练度']
+        // },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data :title,
+               axisLabel:{
+                      interval:0,
+                       rotate:45,
+                       margin:2,
+                       textStyle:{
+                           color:'#333'
+                       }
+                   },
+                  // formatter:function(val){
+                  //     return val.split("").join("\n");
 
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                axisLabel: {
+                      show: true,
+                      interval: 'auto',
+                      formatter: '{value} %'
+                },
+                show: true,
+                min:0,
+                max:100,
+                splitNumber:10
+            }
+        ],
+        series : [
+            {
+                name:'熟练度',
+                type:'bar',
+                data:mastery,
+                barWidth : 20,
+                itemStyle: {
+                    normal: {
+                        color: function(params) {
+                            var colorList = [
+                              '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+                               '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',
+                               '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        // label: {
+                        //     show: true,
+                        //     position: 'top',
+                        //     formatter: '{b}\n{c}%'
+                        // }
+                    }
+                },
+            }
+        ]
+    };
+   myChart.setOption(option)
 </script>
 </body>
 </html>

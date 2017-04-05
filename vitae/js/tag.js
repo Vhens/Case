@@ -1,5 +1,5 @@
 (function(){
-    var radius = 180;
+    var radius = 160;
     var dtr = Math.PI/180;
     var d=400;
     var mcList = [];
@@ -8,7 +8,7 @@
     var lastb = 1;
     var distr = true;
     var tspeed=4;
-    var size=200;
+    var size=100;
     var mouseX=0;
     var mouseY=0;
     var howElliptical=1;

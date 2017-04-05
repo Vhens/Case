@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1491313032431'); /* IE9*/
-  src: url('iconfont.eot?t=1491313032431#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1491313032431') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1491313032431') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1491313032431#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1491401055555'); /* IE9*/
+  src: url('iconfont.eot?t=1491401055555#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1491401055555') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1491401055555') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1491401055555#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -17,9 +17,17 @@
 
 .icon-llcouponsupportedshopaddress:before { content: "\e600"; }
 
+.icon-github:before { content: "\e6ed"; }
+
+.icon-jquery:before { content: "\e60a"; }
+
 .icon-gulpwhitetext:before { content: "\e603"; }
 
+.icon-bootstrapoutline:before { content: "\e60b"; }
+
 .icon-xiangmu:before { content: "\e67a"; }
+
+.icon-git:before { content: "\e708"; }
 
 .icon-jishuqiangying:before { content: "\e63f"; }
 
@@ -27,11 +35,17 @@
 
 .icon-ziliao:before { content: "\e629"; }
 
+.icon-es:before { content: "\e62c"; }
+
 .icon-nianling:before { content: "\e69f"; }
+
+.icon-ps:before { content: "\e610"; }
 
 .icon-js:before { content: "\e65d"; }
 
 .icon-lianxi1:before { content: "\e649"; }
+
+.icon-git1:before { content: "\e90e"; }
 
 .icon-shuangyoukuohao:before { content: "\e672"; }
 
@@ -42,6 +56,8 @@
 .icon-guanyuwo:before { content: "\e602"; }
 
 .icon-sass:before { content: "\e646"; }
+
+.icon-SVN:before { content: "\e63d"; }
 
 .icon-react:before { content: "\e770"; }
 
