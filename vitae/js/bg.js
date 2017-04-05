@@ -1,7 +1,7 @@
 (function(){
       var myCanvas = document.getElementById("myBg");
-        myCanvas.width = 1600;
-        myCanvas.height = 770;
+        myCanvas.width = document.body.clientWidth;
+        myCanvas.height = document.body.clientHeight;
         var ctx = myCanvas.getContext("2d");
         var zhongX = 800;
         var zhongY = 385;
