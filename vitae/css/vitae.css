@@ -350,9 +350,14 @@ ul,li{
    background-size: 100%;
 }
 .project .item{
-    width: 80%;
-    height: 300px;
+    position: relative;
+    z-index: 3;
+}
+.project .item{
+    width:80%;
+    height: 350px;
     margin:0 auto;
+    padding: 10px;
     background-color: #fff;
     border-radius: 8px;
 }
@@ -363,7 +368,7 @@ ul,li{
     display: inline-block;
     width: 15px;
     height: 15px;
-    margin:10px 0 0 10px;
+    margin:20px 0 0 10px;
     border-radius: 50%;
     background-color: rgba(0,0,0,.7);
 }
