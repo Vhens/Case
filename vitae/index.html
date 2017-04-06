@@ -47,7 +47,7 @@
      <!-- 导航结束 -->
      <!-- 基本资料开始 -->
      <section id="information" class="page information">
-        <canvas id="myBg"></canvas>
+        <canvas id="myBg">浏览器不支持Canvas</canvas>
         <div class="container">
             <div class="row">
                 <div class="ribbon">
@@ -130,6 +130,7 @@
      <!-- 关于我结束 -->
      <!-- 技术栈开始 -->
      <section id="technology" class="page technology">
+          <canvas id="fire">浏览器不支持Canvas</canvas>
           <div class="container">
               <div class="ribbon">
                 <span class="ribbon1">
@@ -347,7 +348,8 @@
             }
         ]
     };
-   myChart.setOption(option)
+   myChart.setOption(option);
+   window.onresize = myChart.resize
 </script>
 </body>
 </html>

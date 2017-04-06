@@ -55,7 +55,7 @@ ul,li{
     display: inline-block;
     text-align: center;
     background: #F8463F;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1;
     padding: 20px 8px 10px;
     border-top-right-radius: 8px;
@@ -121,17 +121,22 @@ ul,li{
 .contact{
     width: 100%;
     height:100%;
-    padding-top:75px;
     padding-bottom: 60px;
     text-align: center;
 }
 /*基本资料*/
 .information{
     position: relative;
-    text-align: center;
+    background-color: #16a085;
+   /* padding-top: 75px;
     background-size: 50px 50px;
     background-color: #ac0;
-    background-image: linear-gradient(45deg, rgba(130, 169, 159, .2) 25%, transparent 25%, transparent 50%, rgba(130, 169, 159, .2) 50%, rgba(130, 169, 159, .2) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(130, 169, 159, .2) 25%, transparent 25%, transparent 50%, rgba(130, 169, 159, .2) 50%, rgba(130, 169, 159, .2) 75%, transparent 75%, transparent);*/
+}
+.information .container{
+    position: absolute;
+    top:75px;
+    left: 18%;
 }
 .information .vhen{
     width:20rem;
@@ -140,8 +145,11 @@ ul,li{
     margin-bottom:3rem;
     border-radius: 50%;
 }
-
-#myBg{
+.information .vhen:hover img{
+    transform: rotate(360deg) scale(1.2);
+    transition: all 2s cubic-bezier(.36,0,.64,1);
+}
+#myBg,#snow{
     position: absolute;
     top:0;
     left: 0;
@@ -334,7 +342,12 @@ ul,li{
 }
 /*项目经验*/
 .project{
+    position: relative;
+    width:100%;
+    height: 100%;
     background-color: #83aba1;
+   /*background: url('../img/timg.jpg') no-repeat;*/
+   background-size: 100%;
 }
 .project .item{
     width: 80%;

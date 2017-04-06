@@ -1,5 +1,8 @@
 /*iphone5*/
 @media screen and (max-width: 374px) and (min-width: 320px){
+    .information .container{
+        left: 4%;
+    }
     .information .vhen{
         width:10rem;
         height:10rem;
@@ -38,7 +41,10 @@
     }
 }
 /*iphone6*/
-@media screen and (max-width: 413px) and (min-width: 375px){
+@media screen and (max-width: 413px) and (min-width: 374px){
+    .information .container{
+        left: 4%;
+    }
     .information .vhen{
         width:12rem;
         height:12rem;
@@ -75,6 +81,9 @@
 }
 /*iphone6Plus*/
 @media screen and (max-width: 765px) and (min-width: 414px){
+    .information .container{
+        left: 4%;
+    }
     .information .vhen{
         width:12rem;
         height:12rem;
