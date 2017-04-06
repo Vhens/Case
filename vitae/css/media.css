@@ -1,0 +1,111 @@
+/*iphone5*/
+@media screen and (max-width: 374px) and (min-width: 320px){
+    .information .vhen{
+        width:10rem;
+        height:10rem;
+        margin-left: 30%;
+        margin-top: 30px;
+    }
+    .about .col-md-4 .item:before{
+        left: 50px;
+        width: 5rem;
+        height: 5rem;
+    }
+    .about .col-md-4 .item{
+        width: 5rem;
+        height: 5rem;
+    }
+    .about .col-md-4 .icon{
+        margin-top: 15px;
+    }
+    .about .col-md-4 .name{
+        font-size: 16px;
+    }
+    .technology .tagsList{
+        width:80px;
+        height: 80px;
+        margin: 50px auto 90px;
+
+    }
+    .tagsList .item{
+        font-size: 14px;
+    }
+    .technology .content{
+        font-size: 12px;
+    }
+    .project .box{
+        margin-top: 30px;
+    }
+}
+/*iphone6*/
+@media screen and (max-width: 413px) and (min-width: 375px){
+    .information .vhen{
+        width:12rem;
+        height:12rem;
+        margin-left: 32%;
+        margin-top: 30px;
+    }
+    .about .col-md-4 .item:before{
+        left: 65px;
+        width: 5rem;
+        height: 5rem;
+    }
+    .about .col-md-4 .item{
+        width: 5rem;
+        height: 5rem;
+    }
+    .about .col-md-4 .icon{
+        margin-top: 15px;
+    }
+    .about .col-md-4 .name{
+        font-size: 16px;
+    }
+    .technology .tagsList{
+        width:100px;
+        height: 90px;
+        margin:50px auto 120px;
+        font-size: 16px;
+    }
+    .technology .content{
+        font-size: 16px;
+    }
+    .project .box{
+        margin-top: 30px;
+    }
+}
+/*iphone6Plus*/
+@media screen and (max-width: 765px) and (min-width: 414px){
+    .information .vhen{
+        width:12rem;
+        height:12rem;
+        margin-left: 32%;
+        margin-top: 30px;
+    }
+    .about .col-md-4 .item:before{
+        left: 62px;
+        width: 7rem;
+        height: 7rem;
+    }
+    .about .col-md-4 .item{
+        width: 7rem;
+        height: 7rem;
+    }
+    .about .col-md-4 .icon{
+        margin-top: 20px;
+    }
+    .about .col-md-4 .name{
+        font-size: 20px;
+    }
+    .technology .tagsList{
+        width:150px;
+        height: 100px;
+        margin:80px auto 120px;
+        font-size: 18px;
+    }
+    .technology .content{
+        font-size: 18px;
+    }
+    .project .box{
+        margin-top: 30px;
+    }
+}

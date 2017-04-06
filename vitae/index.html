@@ -6,6 +6,7 @@
     <title>个人简历</title>
     <link rel="stylesheet" href="../common/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/vitae.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
     <link rel="stylesheet" href="icon/iconfont.css">
 </head>
 <body>
@@ -55,7 +56,7 @@
                   </span>
                 </div>
                 <div class="vhen">
-                    <img src="img/my.jpg" alt="">
+                    <img src="img/my.jpg" class="img-responsive" alt="">
                 </div>
                 <h1>一个人的坚强不是看他外壳有多硬，而是看他的疤痕有多深</h1>
                 <hr>
@@ -69,62 +70,60 @@
      <!-- 关于我开始 -->
      <section id="about" class="page about">
          <div class="container">
+            <div class="ribbon">
+              <span class="ribbon1">
+                  <span><i class="icon iconfont icon-guanyuwo"></i>&nbsp;关于我</span>
+              </span>
+            </div>
              <div class="row">
-                  <div class="ribbon">
-                    <span class="ribbon1">
-                        <span><i class="icon iconfont icon-guanyuwo"></i>&nbsp;关于我</span>
-                    </span>
-                  </div>
-                 <ul>
-                     <li>
-                        <div class="item">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-colleges"></use>
-                            </svg>
-                        </div>
-                        <div class="name">大专/福建船政交通学院</div>
-                     </li>
-                     <li>
-                        <div class="item">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-llcouponsupportedshopaddress"></use>
-                            </svg>
-                        </div>
-                        <div class="name">厦门</div>
-                     </li>
-                     <li>
-                        <div class="item">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-normal"></use>
-                            </svg>
-                        </div>
-                        <div class="name">在职</div>
-                     </li>
-                     <li>
-                         <div class="item">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-nianling"></use>
-                            </svg>
-                         </div>
-                        <div class="name">年龄/25</div>
-                     </li>
-                     <li>
-                        <div class="item">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-xingzuo"></use>
-                            </svg>
-                        </div>
-                        <div class="name">处女座</div>
-                     </li>
-                     <li>
-                       <div class="item">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-xingqu"></use>
-                            </svg>
-                       </div>
-                        <div class="name">音乐/旅行</div>
-                     </li>
-                 </ul>
+                 <div class="col-md-4 col-xs-6">
+                    <div class="item">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-colleges"></use>
+                        </svg>
+                    </div>
+                    <div class="name">大专/福建船政交通学院</div>
+                 </div>
+                 <div class="col-md-4 col-xs-6">
+                    <div class="item">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-llcouponsupportedshopaddress"></use>
+                        </svg>
+                    </div>
+                    <div class="name">厦门</div>
+                 </div>
+                 <div class="col-md-4 col-xs-6">
+                    <div class="item">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-normal"></use>
+                        </svg>
+                    </div>
+                    <div class="name">在职</div>
+                 </div>
+                 <div class="col-md-4 col-xs-6">
+                     <div class="item">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-nianling"></use>
+                        </svg>
+                     </div>
+                    <div class="name">年龄/25</div>
+                 </div>
+                 <div class="col-md-4 col-xs-6">
+                    <div class="item">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xingzuo"></use>
+                        </svg>
+                    </div>
+                    <div class="name">处女座</div>
+                 </div>
+                 <div class="col-md-4 col-xs-6">
+                   <div class="item">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xingqu"></use>
+                        </svg>
+                   </div>
+                    <div class="name">音乐/旅行</div>
+                 </div>
              </div>
          </div>
      </section>
@@ -138,7 +137,7 @@
                 </span>
               </div>
               <div class="row">
-                  <div class="col-md-5 text-right">
+                  <div class="col-md-5 col-xs-12 text-center">
                     <div id="tagsList" class="tagsList">
                         <span class="item" data-toggle="modal" data-target=".modal">
                           <i class="icon iconfont">&#xe608;</i>&nbsp;HTML5
@@ -184,7 +183,7 @@
                         </span>
                     </div>
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-7 col-xs-12">
                     <p class="content">主写pc、移动端项目、thinkphp研发</p>
                     <p class="content">深谙自动化、组件化、模块化开发之道</p>
                     <p class="content">编写代码常思其健壮性、扩展性、维护性、代码规范强迫症</p>
@@ -201,7 +200,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title text-center">技术熟练度</h4>
           </div>
-          <div class="modal-body" id="map" style="width:800px;height: 500px;">
+          <div class="modal-body" id="map" style="width:50rem;height: 500px;">
 
           </div>
         </div>

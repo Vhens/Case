@@ -4,10 +4,16 @@ body,html{
     font-family:'Microsoft YaHei',sans-serif;
 }
 section,body,html,ul,li,p,div,i,img,span,h1{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 ul,li{
     list-style-type: none;
+}
+.wrapper{
+    width:100%;
+    height:100%;
 }
 .cricle{
     position: fixed;
@@ -28,10 +34,10 @@ ul,li{
 .ribbon {
       position: relative;
       display: inline-block;
-      width: 100px;
+      width: 12.7rem;
       text-transform: uppercase;
       color: #fff;
-      margin-bottom: 80px;
+      margin-bottom: 5%;
 }
 .ribbon1:after {
     position: absolute;
@@ -40,8 +46,8 @@ ul,li{
     display: block;
     width: 0;
     height: 0;
-    border-left: 76px solid transparent;
-    border-right: 76px solid transparent;
+    border-left: 6.4rem solid transparent;
+    border-right: 6.4rem solid transparent;
     border-top: 20px solid #F8463F;
 }
 .ribbon1 span {
@@ -53,7 +59,7 @@ ul,li{
     line-height: 1;
     padding: 20px 8px 10px;
     border-top-right-radius: 8px;
-    width: 150px;
+    width: 100%;
 }
 .ribbon1 span:before, .ribbon1 span:after {
     position: absolute;
@@ -114,22 +120,24 @@ ul,li{
 .project,
 .contact{
     width: 100%;
-    padding-top:80px;
+    height:100%;
+    padding-top:75px;
+    padding-bottom: 60px;
     text-align: center;
 }
 /*基本资料*/
 .information{
     position: relative;
-
     text-align: center;
     background-size: 50px 50px;
     background-color: #ac0;
     background-image: linear-gradient(45deg, rgba(130, 169, 159, .2) 25%, transparent 25%, transparent 50%, rgba(130, 169, 159, .2) 50%, rgba(130, 169, 159, .2) 75%, transparent 75%, transparent);
 }
 .information .vhen{
-    width:200px;
-    height: 200px;
-    margin-left: 42%;
+    width:20rem;
+    height:20rem;
+    margin-left: 40%;
+    margin-bottom:3rem;
     border-radius: 50%;
 }
 
@@ -168,24 +176,14 @@ ul,li{
         linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
     background-size: 70px 120px;
 }
-.about ul{
-    text-align: center;
-    font-size: 0;
-}
-.about li{
-    position: relative;
-    display: inline-block;
-    width:33.33%;
-    margin-bottom: 30px;
-}
-.about li .item{
+.about .col-md-4 .item{
     width: 10rem;
     height:10rem;
-    margin:0 auto;
+    margin:10px auto;
     text-align: center;
     border-radius: 50%;
 }
-.about li .item:before{
+.about .col-md-4 .item:before{
     position: absolute;
     left:128px;
     content: '';
@@ -195,25 +193,25 @@ ul,li{
     border-radius: 62px;
     opacity: 0;
 }
-.about li:nth-of-type(1) .item:before{
+.about .col-md-4:nth-of-type(1) .item:before{
     border: 8px solid #3295ff;
 }
-.about li:nth-of-type(2) .item:before{
+.about .col-md-4:nth-of-type(2) .item:before{
     border: 8px solid #9266f9;
 }
-.about li:nth-of-type(3) .item:before{
+.about .col-md-4:nth-of-type(3) .item:before{
     border: 8px solid #16c2c2;
 }
-.about li:nth-of-type(4) .item:before{
+.about .col-md-4:nth-of-type(4) .item:before{
     border: 8px solid #7cba59;
 }
-.about li:nth-of-type(5) .item:before{
+.about .col-md-4:nth-of-type(5) .item:before{
     border: 8px solid #ff4100;
 }
-.about li:nth-of-type(6) .item:before{
+.about .col-md-4:nth-of-type(6) .item:before{
     border: 8px solid #cdbe9f;
 }
-.about li:hover .item:before{
+.about .col-md-4:hover .item:before{
     animation: warn 1s ease-out infinite;
 }
 @keyframes warn {
@@ -242,54 +240,54 @@ ul,li{
         opacity: 0.0;
     }
 }
-.about li .item:hover .icon{
+.about .col-md-4 .item:hover .icon{
     transform: scale(1.2);
     transform: rotate(360deg);
     transition: all .6s ease;
 }
-.about li:nth-of-type(1) .item{
+.about .col-md-4:nth-of-type(1) .item{
     background-color:#3295ff;
 }
-.about li:nth-of-type(2) .item{
+.about .col-md-4:nth-of-type(2) .item{
     background-color:#9266f9;
 }
-.about li:nth-of-type(3) .item{
+.about .col-md-4:nth-of-type(3) .item{
     background-color:#16c2c2;
 }
-.about li:nth-of-type(4) .item{
+.about .col-md-4:nth-of-type(4) .item{
     background-color:#7cba59;
 }
-.about li:nth-of-type(5) .item{
+.about .col-md-4:nth-of-type(5) .item{
     background-color:#ff4100;
 }
-.about li:nth-of-type(6) .item{
+.about .col-md-4:nth-of-type(6) .item{
     background-color:#cdbe9f;
 }
-.about li:nth-of-type(1) .item:hover+.name{
+.about .col-md-4:nth-of-type(1) .item:hover+.name{
     color:#3295ff;
 }
-.about li:nth-of-type(2) .item:hover+.name{
+.about .col-md-4:nth-of-type(2) .item:hover+.name{
     color:#9266f9;
 }
-.about li:nth-of-type(3) .item:hover+.name{
+.about .col-md-4:nth-of-type(3) .item:hover+.name{
     color:#16c2c2;
 }
-.about li:nth-of-type(4) .item:hover+.name{
+.about .col-md-4:nth-of-type(4) .item:hover+.name{
     color:#7cba59;
 }
-.about li:nth-of-type(5) .item:hover+.name{
+.about .col-md-4:nth-of-type(5) .item:hover+.name{
     color:#ff4100;
 }
-.about li:nth-of-type(6) .item:hover+.name{
+.about .col-md-4:nth-of-type(6) .item:hover+.name{
     color:#cdbe9f;
 }
-.about li .icon{
-    width: 60px;
-    height: 60px;
+.about .col-md-4 .icon{
+    width: 50%;
+    height: 50%;
     margin-top:30px;
     fill:#fff;
 }
-.about li .name{
+.about .col-md-4 .name{
     width:100%;
     height: 60px;
     line-height: 60px;
@@ -300,27 +298,6 @@ ul,li{
 .technology{
     background-color: #4a5b8b;
 }
-.technology .item-1{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border:4px dashed #fff;
-    border-radius: 50%;
-}
-.technology .item-1 span{
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    color: #fff;
-    border-radius: 50%;
-    background-color: #ccc;
-}
-.technology .item-1 span:nth-of-type(1){
-    transition: all 3s ease;
-    animation:animX 3s cubic-bezier(.36,0,.64,1) infinite;
-}
 .technology .tagsList{
     position:relative;
     width:300px;
@@ -330,6 +307,9 @@ ul,li{
     text-align: left;
     font-size: 20px;
     color: #fff;
+}
+.technology .row{
+    margin-top: 100px;
 }
 .tagsList .item {
     position:absolute;
@@ -350,14 +330,14 @@ ul,li{
     letter-spacing:2px;
 }
  .modal-content{
-    width: 800px !important;
+    width: 100% !important;
 }
 /*项目经验*/
 .project{
     background-color: #83aba1;
 }
-.project .box,.project .item{
-    width: 800px;
+.project .item{
+    width: 80%;
     height: 300px;
     margin:0 auto;
     background-color: #fff;
@@ -412,3 +392,4 @@ ul,li{
          transform: translateX(-5px);
     }
 }
+

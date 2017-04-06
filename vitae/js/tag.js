@@ -1,14 +1,14 @@
 (function(){
-    var radius = 160;
+    var radius = 120;
     var dtr = Math.PI/180;
-    var d=400;
+    var d=300;
     var mcList = [];
     var active = false;
     var lasta = 1;
     var lastb = 1;
     var distr = true;
     var tspeed=4;
-    var size=100;
+    var size=300;
     var mouseX=0;
     var mouseY=0;
     var howElliptical=1;
