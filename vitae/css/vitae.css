@@ -312,9 +312,37 @@ ul,li{
     height:300px;
 }
 .technology .content{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
     text-align: left;
     font-size: 20px;
-    color: #fff;
+    background-image: -webkit-linear-gradient(left, #999, #999 5%, #fff 10%, #999 15%, #999);
+    background-image: -o-linear-gradient(left, #999, #999 5%, #fff 10%, #999 15%, #999);
+    background-image: linear-gradient(to right, #999, #999 5%, #fff 10%, #999 15%, #999);
+    background-size: 200%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.technology .content:nth-of-type(1){
+    -webkit-animation: anim 3s infinite;
+}
+.technology .content:nth-of-type(2){
+    -webkit-animation: anim 4s infinite;
+}
+.technology .content:nth-of-type(3){
+    -webkit-animation: anim 5s infinite;
+}
+.technology .content:nth-of-type(4){
+    -webkit-animation: anim 6s infinite;
+}
+@-webkit-keyframes anim{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: -100% 0;
+    }
 }
 .technology .row{
     margin-top: 100px;
