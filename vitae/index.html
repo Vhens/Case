@@ -45,6 +45,7 @@
       </div>
     </nav>
      <!-- 导航结束 -->
+<!--      <div id="pageBox"> -->
      <!-- 基本资料开始 -->
      <section id="information" class="page information">
         <canvas id="myBg">浏览器不支持Canvas</canvas>
@@ -181,6 +182,9 @@
                         <span class="item" data-toggle="modal" data-target=".modal">
                            <i class="icon iconfont icon-mySql"></i>&nbsp;sublime text3
                         </span>
+                        <span class="item" data-toggle="modal" data-target=".modal">
+                           &nbsp;echart3
+                        </span>
                     </div>
                   </div>
                   <div class="col-md-7 col-xs-12">
@@ -285,17 +289,18 @@
           </div>
      </section>
      <!-- 联系我结束 -->
+<!--      </div> -->
      <!-- 小圆点 -->
-     <ul class="cricle">
+   <!--   <ul class="cricle" id="cricle">
          <li class="cur item"></li>
          <li class="item"></li>
          <li class="item"></li>
          <li class="item"></li>
          <li class="item"></li>
      </ul>
-     <span class="bottom-arrow">
+     <span class="bottom-arrow" id="bottom-arrow">
         <i class="icon iconfont icon-shuangyoukuohao"></i>
-     </span>
+     </span> -->
        <audio controls style="display: none;" autoplay="true" loop="loop">
           <source src="../common/music/music-1.mp3" type="audio/mpeg">
           <source src="../common/music/music-1.mp3" type="audio/ogg">
@@ -311,7 +316,8 @@
 <script type="text/javascript" src="icon/iconfont.js"></script>
 <script type="text/javascript" src="js/ewm.js"></script>
 <script type="text/javascript">
-  var words="只要不把自己束缚在心灵的牢笼里，谁也束缚不了你去展翅高飞 <br/>"+
+(function(){
+    var words="只要不把自己束缚在心灵的牢笼里，谁也束缚不了你去展翅高飞 <br/>"+
                       "前端即兴趣，兴趣即未来 <br/>"+"喜欢尝试，期待新鲜事物 <br/>"+"心有多大，舞台就有多大<br/>"+"带我装逼，带我飞吧";
   var myBody = document.getElementById("contact_content");
  //滚动条在Y轴上的滚动距离
@@ -355,6 +361,7 @@ function getWindowHeight(){
       timer = setInterval(function () {
           if (count > msg.length) {
               clearInterval(timer);
+              return false;
           }
           else {
               postion.innerHTML = msg.substring(0, count);
@@ -362,18 +369,14 @@ function getWindowHeight(){
           }
       }, time)
   }
-window.onscroll = function(){
-　　if(getScrollTop() + getWindowHeight() == getScrollHeight()){
-　　　  showWords(myBody, words, 120);
-　　}
-
-};
+   setTimeout(showWords(myBody, words, 120),5000);
+})();
 
 </script>
 <script type="text/javascript">
    var myChart=echarts.init(document.getElementById('map'));
-   var title= ['HTML5','CSS3','JS','Jquery','Vue','Mysql','Thinkphp','Sass','bootstrap','git','github','svn'];
-   var mastery=[90, 90 ,82, 90, 60, 80, 80, 90, 92, 95,95,80];
+   var title= ['HTML5','CSS3','JS','Jquery','Vue','Mysql','Thinkphp','Sass','bootstrap','git','github','svn','echart3'];
+   var mastery=[90, 90 ,82, 90, 60, 80, 80, 90, 92, 95,95,80,70];
     option = {
         title : {
             text: '技术栈',

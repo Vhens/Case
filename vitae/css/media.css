@@ -127,3 +127,14 @@
         height: 500px;
     }
 }
+/*pc大屏幕*/
+/*@media screen and (max-width: 1600px){
+    .information .container {
+        margin-left: 12%;
+    }
+}
+@media screen and (min-width: 1800px){
+    .information .container {
+        margin-left: 18%;
+    }
+}*/
