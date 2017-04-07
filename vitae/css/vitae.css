@@ -317,8 +317,6 @@ ul,li{
     line-height: 30px;
     text-align: left;
     font-size: 20px;
-    background-image: -webkit-linear-gradient(left, #999, #999 5%, #fff 10%, #999 15%, #999);
-    background-image: -o-linear-gradient(left, #999, #999 5%, #fff 10%, #999 15%, #999);
     background-image: linear-gradient(to right, #999, #999 5%, #fff 10%, #999 15%, #999);
     background-size: 200%;
     -webkit-text-fill-color: transparent;
