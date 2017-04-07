@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/vitae.css">
     <link rel="stylesheet" type="text/css" href="css/media.css">
     <link rel="stylesheet" href="icon/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/animate.css">
 </head>
 <body>
 <div class="wrapper" id="wrapper">
@@ -56,7 +57,7 @@
                       <span><i class="icon iconfont icon-ziliao"></i>&nbsp;基本资料</span>
                   </span>
                 </div>
-                <div class="vhen">
+                <div class="vhen wow bounce" data-wow-duration="1s" data-wow-delay="2s" >
                     <img src="img/my.jpg" class="img-responsive" alt="">
                 </div>
                 <h1>一个人的坚强不是看他外壳有多硬，而是看他的疤痕有多深</h1>
@@ -77,7 +78,7 @@
               </span>
             </div>
              <div class="row">
-                 <div class="col-md-4 col-xs-6">
+                 <div class="col-md-4 col-xs-6 wow slideInLeft"  data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-colleges"></use>
@@ -85,7 +86,7 @@
                     </div>
                     <div class="name">大专/福建船政交通学院</div>
                  </div>
-                 <div class="col-md-4 col-xs-6">
+                 <div class="col-md-4 col-xs-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-llcouponsupportedshopaddress"></use>
@@ -93,7 +94,7 @@
                     </div>
                     <div class="name">厦门</div>
                  </div>
-                 <div class="col-md-4 col-xs-6">
+                 <div class="col-md-4 col-xs-6 wow slideInRight" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-normal"></use>
@@ -101,7 +102,7 @@
                     </div>
                     <div class="name">在职</div>
                  </div>
-                 <div class="col-md-4 col-xs-6">
+                 <div class="col-md-4 col-xs-6 wow slideInLeft" data-wow-duration="1.5s" data-wow-delay="0.6s">
                      <div class="item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-nianling"></use>
@@ -109,7 +110,7 @@
                      </div>
                     <div class="name">年龄/25</div>
                  </div>
-                 <div class="col-md-4 col-xs-6">
+                 <div class="col-md-4 col-xs-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.6s">
                     <div class="item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-xingzuo"></use>
@@ -117,7 +118,7 @@
                     </div>
                     <div class="name">处女座</div>
                  </div>
-                 <div class="col-md-4 col-xs-6">
+                 <div class="col-md-4 col-xs-6 wow slideInRight"data-wow-duration="1.5s" data-wow-delay="0.6s">
                    <div class="item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-xingqu"></use>
@@ -138,7 +139,7 @@
           </div>
           <div class="container">
               <div class="row">
-                  <div class="col-md-5 col-xs-12 text-center">
+                  <div class="col-md-5 col-xs-12 text-center  wow slideInLeft">
                     <div id="tagsList" class="tagsList">
                         <span class="item" data-toggle="modal" data-target=".modal">
                           <i class="icon iconfont">&#xe608;</i>&nbsp;HTML5
@@ -187,7 +188,7 @@
                         </span>
                     </div>
                   </div>
-                  <div class="col-md-7 col-xs-12">
+                  <div class="col-md-7 col-xs-12 wow slideInRight">
                     <p class="content">主写pc、移动端项目、thinkphp研发</p>
                     <p class="content">深谙自动化、组件化、模块化开发之道</p>
                     <p class="content">编写代码常思其健壮性、扩展性、维护性、代码规范强迫症</p>
@@ -220,9 +221,9 @@
                         <span><i class="icon iconfont icon-xiangmu"></i>&nbsp;项目经验
                     </span>
                   </div>
-                  <div class="box" id="box">
+                  <div class="box wow fadeIn" id="box">
                         <div id="box-item">
-                            <div class="item">
+                            <div class="item ">
                                <p class="title">易瑞捷科技有限公司</p>
                                 <ul>
                                   <li>2017年2月~至今</li>
@@ -279,12 +280,14 @@
                     <div class="content" id="contact_content">
                     </div>
                     <div class="ewm" id="ewm"></div>
-                  </div>
-                     <p class="lianxi">
+                </div>
+                <div class="row text-center">
+                   <p class="lianxi">
                       <a href="https://github.com/Vhens" target="blanck"><i class="icon iconfont icon-github"></i></a>
                       <a href="https://vhens.github.io/" target="blanck"><i class="icon iconfont icon-wushanguanwangziti-"></i></a>
                       <a href="tencent://message/?uin=942428642&Site=&Menu=yes"> <i class="icon iconfont icon-87"></i></a>
                     </p>
+                </div>
               </div>
           </div>
      </section>
@@ -301,7 +304,7 @@
      <span class="bottom-arrow" id="bottom-arrow">
         <i class="icon iconfont icon-shuangyoukuohao"></i>
      </span> -->
-       <audio controls style="display: none;" autoplay="true" loop="loop">
+       <audio controls style="display: none;" autoplay="true" loop="loop" id="music">
           <source src="../common/music/music-1.mp3" type="audio/mpeg">
           <source src="../common/music/music-1.mp3" type="audio/ogg">
           您的浏览器不支持该音频格式。
@@ -315,8 +318,26 @@
 <script type="text/javascript" src="js/vitae.js"></script>
 <script type="text/javascript" src="icon/iconfont.js"></script>
 <script type="text/javascript" src="js/ewm.js"></script>
+<script type="text/javascript" src="../common/js/jquery.singlePageNav.min.js"></script>
+<script type="text/javascript" src="../common/js/wow.js"></script>
+<script type="text/javascript">
+  $(function(){
+
+     $('.navbar').singlePageNav({
+      offset:70
+     });
+     $('.navbar-collapse li').on('click',function(){
+        $('.navbar-collapse').collapse('hide');
+     });
+     new WOW().init();
+  })
+
+</script>
 <script type="text/javascript">
 (function(){
+    Media = document.getElementById("music");
+    Media.src = "../common/music/music-1.mp3";
+    Media.play();
     var words="只要不把自己束缚在心灵的牢笼里，谁也束缚不了你去展翅高飞 <br/>"+
                       "前端即兴趣，兴趣即未来 <br/>"+"喜欢尝试，期待新鲜事物 <br/>"+"心有多大，舞台就有多大<br/>"+"带我装逼，带我飞吧";
   var myBody = document.getElementById("contact_content");

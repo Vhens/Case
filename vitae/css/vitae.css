@@ -115,7 +115,6 @@ ul,li{
     margin-top: 17px;
 }
 .navbar-default .navbar-toggle:hover{
-    border-color:red;
     background-color: rgb(69,210,184) !important;
 }
 .navbar-default .navbar-toggle .icon-bar{
@@ -386,10 +385,6 @@ ul,li{
    background-size: 100%;
 }
 .project .item{
-    position: relative;
-    z-index: 3;
-}
-.project .item{
     width:80%;
     height: 350px;
     margin:0 auto;
@@ -451,7 +446,7 @@ ul,li{
 }
 .contact .content{
     width:80%;
-    height: 200px;
+    height: 240px;
     line-height: 40px;
     margin:30px auto;
     font-size:20px;
@@ -470,7 +465,7 @@ ul,li{
         0 10px 10px rgba(0,0,0,.15);
 }
 .contact .lianxi a{
-    margin-left: 15px;
+    margin-right: 15px;
     text-decoration: none;
 }
 .contact .lianxi{
@@ -483,9 +478,8 @@ ul,li{
    color:#fff;
 }
 .contact .ewm{
-    width: 150px;
-    height: 150px;
-    margin:50px auto;
+    width: 160px;
+    margin:20px auto;
 }
 /*翻页按钮*/
 .bottom-arrow{
