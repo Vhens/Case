@@ -136,7 +136,7 @@ ul,li{
 .information .container{
     position: absolute;
     top:75px;
-    left: 18%;
+    margin-left: 6%;
 }
 .information .vhen{
     width:20rem;
@@ -193,7 +193,7 @@ ul,li{
 }
 .about .col-md-4 .item:before{
     position: absolute;
-    left:128px;
+    left:135px;
     content: '';
     display: inline-block;
     width: 10rem;
@@ -386,6 +386,40 @@ ul,li{
     padding: 10px;
     background-color: #fff;
     border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,.6);
+}
+.project .item .title{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    background-image: -webkit-linear-gradient(left, #167993, #fbe500 25%, #167993 50%, #fbe500 75%, #167993);
+    background-size: 200% 100%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation: mask 4s infinite linear;
+}
+@-webkit-keyframes mask {
+    0%  { background-position: 0 0;}
+    100% { background-position: -100% 0;}
+}
+.project .item ul{
+    width: 80%;
+    margin: 0 auto;
+/*    text-align: left;*/
+}
+.project .item li{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color:#999;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.project .item li a{
+    text-decoration: none;
 }
 .project .item:not(:first-child){
     display: none;
@@ -405,6 +439,33 @@ ul,li{
 .contact{
     background-color: #49819c;
 }
+.contact .content{
+    width:80%;
+    height: 200px;
+    line-height: 40px;
+    margin:30px auto;
+    font-size:20px;
+    color:#fff;
+}
+.contact .lianxi a{
+    margin-left: 15px;
+    text-decoration: none;
+}
+.contact .lianxi{
+    height: 40px;
+    line-height: 40px;
+}
+.contact .lianxi .icon{
+    vertical-align: top;
+   font-size:36px;
+   color:#fff;
+}
+.contact .ewm{
+    width: 150px;
+    height: 150px;
+    margin:0 auto 10px;
+}
+/*翻页按钮*/
 .bottom-arrow{
     position: fixed;
     bottom: 5px;
