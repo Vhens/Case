@@ -26,7 +26,7 @@
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li>
+            <li class="cur">
                 <a href="#information">基本资料</a>
             </li>
             <li>
@@ -294,16 +294,23 @@
      <!-- 联系我结束 -->
 <!--      </div> -->
      <!-- 小圆点 -->
-   <!--   <ul class="cricle" id="cricle">
-         <li class="cur item"></li>
-         <li class="item"></li>
-         <li class="item"></li>
-         <li class="item"></li>
-         <li class="item"></li>
-     </ul>
-     <span class="bottom-arrow" id="bottom-arrow">
-        <i class="icon iconfont icon-shuangyoukuohao"></i>
-     </span> -->
+     <ul class="cricle" id="cricle">
+        <li class="cur item">
+            <a href="#information"></a>
+        </li>
+        <li class="item">
+          <a href="#about" ></a>
+        </li>
+        <li class="item">
+          <a href="#technology"></a>
+        </li>
+        <li class="item">
+          <a href="#project" ></a>
+        </li>
+        <li class="item">
+          <a href="#contact" ></a>
+        </li>
+      </ul>
        <audio controls style="display: none;" autoplay="true" loop="loop" id="music">
           <source src="../common/music/music-1.mp3" type="audio/mpeg">
           <source src="../common/music/music-1.mp3" type="audio/ogg">
@@ -323,7 +330,7 @@
 <script type="text/javascript">
   $(function(){
 
-     $('.navbar').singlePageNav({
+     $('.navbar,.cricle').singlePageNav({
       offset:70
      });
      $('.navbar-collapse li').on('click',function(){

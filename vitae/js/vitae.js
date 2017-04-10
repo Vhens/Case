@@ -4,13 +4,10 @@
     },function(){
          $(this).css('color','#fff');
     })
-     // $('#tagsList .item').on('click',function(){
-     //    alert(1)
-     // })
      $('.point').click(function(){
-        $(this).addClass('act').siblings().removeClass('act')
+        $(this).addClass('act').siblings().removeClass('act');
         var num=$(this).index();
-        $('#box-item .item').eq(num-1).show().siblings().hide()
+        $('#box-item .item').eq(num-1).show().siblings().hide();
      })
     //随机6位数
     function numRadom(){
@@ -20,4 +17,13 @@
         }
         return num;
     }
+    //right圆点
+    $('#cricle li').on('click',function(){
+        $(this).addClass('cur').siblings().removeClass('cur');
+        $('#navbar-collapse li').eq($(this).index()).addClass('cur').siblings().removeClass('cur');
+    });
+     $('#navbar-collapse li').on('click',function(){
+        $(this).addClass('cur').siblings().removeClass('cur');
+        $('#cricle li').eq($(this).index()).addClass('cur').siblings().removeClass('cur');
+    })
 })();
