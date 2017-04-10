@@ -22,8 +22,8 @@
     //     $(this).addClass('cur').siblings().removeClass('cur');
     //     $('#navbar-collapse li').eq($(this).index()).addClass('cur').siblings().removeClass('cur');
     // });
-     $('#navbar-collapse li').on('click',function(){
-        $(this).addClass('cur').siblings().removeClass('cur');
-        // $('#cricle li').eq($(this).index()).addClass('cur').siblings().removeClass('cur');
-    });
+    //  $('#navbar-collapse li').on('click',function(){
+    //     $(this).addClass('cur').siblings().removeClass('cur');
+    //     // $('#cricle li').eq($(this).index()).addClass('cur').siblings().removeClass('cur');
+    // });
 })();
