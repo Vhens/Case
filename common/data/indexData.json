@@ -42,6 +42,9 @@ var data={
             },{
                 "url":"cool/banner",
                 "name":"轮播图"
+            },{
+                "url":"cool/blinds",
+                "name":"百叶窗"
             }
     ]
 }

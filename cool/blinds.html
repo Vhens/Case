@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>百叶窗</title>
+    <style>
+        *{margin:0;padding: 0;}
+        img{
+            display: block;
+            width: 100%;
+        }
+        .blinds{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: stretch;
+            margin-top:100px;
+            overflow: hidden;
+        }
+        .item{
+            width: 20%;
+            height: 100%;
+            flex: 1;
+            box-sizing: border-box;
+            transition: all .5s ease;
+        }
+        .item:nth-child(1)  h2{
+            background-color: #c22326;
+        }
+       .item:nth-child(2)  h2{
+            background-color: #c38338;
+        }
+       .item:nth-child(3)  h2{
+            background-color: #fdb632;
+        }
+        .item:nth-child(4)  h2{
+            background-color: #027878;
+        }
+        .item:nth-child(5) h2{
+            background-color: #801638;
+        }
+        .blinds .item:hover {
+            width: 50%;
+        }
+        .item .content {
+            width: 60rem;
+            transition: opacity .5s ease .3s;
+        }
+        .item h2{
+            width:100%;
+            height: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="blinds">
+        <article class="item">
+            <h2>图片1</h2>
+            <div class="content">
+                <img src="../common/img/banner-1.jpg" alt="">
+            </div>
+        </article>
+        <article class="item">
+            <h2>图片2</h2>
+            <div class="content">
+                <img src="../common/img/banner-2.jpg" alt="">
+            </div>
+        </article>
+        <article class="item">
+            <h2>图片3</h2>
+            <div class="content">
+                <img src="../common/img/banner-3.jpg" alt="">
+            </div>
+        </article>
+        <article class="item">
+            <h2>图片4</h2>
+            <div class="content">
+                <img src="../common/img/banner-4.jpg" alt="">
+            </div>
+        </article>
+        <article class="item">
+            <h2>图片5</h2>
+            <div class="content">
+                <img src="../common/img/banner-5.jpg" alt="">
+            </div>
+        </article>
+    </section>
+</body>
+</html>
